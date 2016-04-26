@@ -1,8 +1,6 @@
 
 var express = require('express');
 var app = express();
-var mongojs = require('mongojs');
-var db = mongojs('contactlist', ['contactlist']);
 var bodyParser = require('body-parser');
 var AWS = require('aws-sdk'); 
 

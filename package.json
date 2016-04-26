@@ -1,6 +1,11 @@
 {
     "name": "sirv",
     "version": "1.0.0",
+    "dependencies": {
+        "express": "*",
+        "body-parser": "*",
+        "aws-sdk": "*"
+    },
     "scripts": {
     "start": "node server.js"
     },
