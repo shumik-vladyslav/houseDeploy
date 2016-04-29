@@ -14,12 +14,27 @@
     i.getElementsByTagName(r)[0].parentNode.appendChild(v);
 })(window, document, 'script');
 </script>
+<style>
+  .hotspot-pointer {
+    display: inline-block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background: yellow;
+}
+</style>
 </head>
 <body>
   <div class="container" ng-controller="AppCtrl">
     
-  <div class="Sirv" data-src="//vitaliy.sirv.com/drmartenboot-3d/boot.spin"></div>
-  
+  <!--<div class="Sirv" data-src="//vitaliy.sirv.com/drmartenboot-3d/boot.spin"></div>-->
+  <div id="image-wraper">
+    <img id="image" ng-src="{{img}}" style="max-width: 100%;">
+  </div>
+   <button class="btn btn-primary" ng-click="back()">back</button>
+  <button class="btn btn-primary" ng-click="forward()">forward</button>
   <!--<button class="btn btn-primary" ng-click="get()">Get</button>-->
  <div>
       <div ng-repeat="hotspot in core.settings.hotspots">

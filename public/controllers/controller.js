@@ -1,6 +1,11 @@
 var myApp = angular.module('myApp', []);
 myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 var vm = this;
+$scope.imgArr = [];
+vm.prefics = "//vitaliy.sirv.com/drmartenboot-3d/";
+$scope.img = "";
+vm.imgIndex = 0;
+
 $scope.htospotObj = {
   data: "",
   frames: {}//1:frame
@@ -55,19 +60,71 @@ $scope.get = function() {
         if (element.hasOwnProperty(i)) {
           var obj = element[i];
           $scope.layers[count++] = obj;
+          $scope.imgArr.push(obj)
         }
       }
     }
   }
+  init();
         });
 };
 $scope.get()
 $scope.update = function() {
-  $scope.core.settings.hotspots[$scope.index].settings = $scope.settings;
+  //$scope.core.settings.hotspots[$scope.index].settings = $scope.settings;
   console.log($scope.core)
   $http.post('/', $scope.core).success(function(response) {});
 };
 
+$scope.back = function(){
+  if(vm.imgIndex > 0){
+    vm.imgIndex = --vm.imgIndex;
+    $scope.img = vm.prefics + $scope.imgArr[vm.imgIndex];
+  }
+};
 
+$scope.forward = function(){
+  if(vm.imgIndex < $scope.imgArr.length - 1){
+    vm.imgIndex = ++vm.imgIndex;
+    $scope.img = vm.prefics + $scope.imgArr[vm.imgIndex];
+  }
+};
+
+function init() {
+    $scope.img = vm.prefics + $scope.imgArr[vm.imgIndex];
+  console.log($scope.core.settings.hotspots[0].frames);
+  console.log($scope.core.settings.hotspots[0].frames[vm.imgIndex + 1]);
+    
+    var imgContainer = $('#image');
+    var imageWraper = $('#image-wraper');
+    imgContainer.click(function(e) {
+      
+            var offset = $(this).offset(),
+            x = Math.round((e.pageX - offset.left) / $(this).width() * 100),
+            y = Math.round((e.pageY - offset.top) / $(this).height() * 100);
+            console.log(x,y)
+            var span = document.createElement("span"); 
+            span.style.left = x;
+            span.style.top = y;
+            span.className = "hotspot-pointer d1";
+            //span.className = "d1";
+            
+            imageWraper.append(span);
+            var newObj = {
+              "pointer": {
+                "style": "d1",
+                "x": x + "%",
+                "y": y + "%"
+              },
+              "box": {
+                "x": 20,
+                "y": 20
+              }
+            };
+            
+            $scope.core.settings.hotspots[0].frames[vm.imgIndex + 1] = newObj;
+            // newConfigForm.val(JSON.stringify(newConfig, null, '\t'));
+            // nextFrame();
+          });
+}
 
 }]);
