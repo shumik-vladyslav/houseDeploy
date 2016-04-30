@@ -14,13 +14,13 @@ AWS.config.update({
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
-app.get('/get', function (req, res) {
-  console.log(2)
+app.post('/get', function (req, res) {
+  console.log(req.body)
     var s3 = new AWS.S3({
     endpoint: new AWS.Endpoint('https://s3.sirv.com'),
     params: {
         Bucket: 'vitaliy',
-        Key: 'drmartenboot-3d/boot.spin',
+        Key: req.body.url,
     }
   });
 s3.getObject({}, function(err, data) {
@@ -37,13 +37,13 @@ s3.getObject({}, function(err, data) {
 
 app.post('/', function (req, res) {
   
-   var buf = new Buffer(JSON.stringify(req.body));
+   var buf = new Buffer(JSON.stringify(req.body.core));
 
   var s3 = new AWS.S3({
     endpoint: new AWS.Endpoint('https://s3.sirv.com'),
     params: {
         Bucket: 'vitaliy',
-        Key: 'drmartenboot-3d/boot.spin',
+        Key: req.body.url,
         Body: buf
     }
   });

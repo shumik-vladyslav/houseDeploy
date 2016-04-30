@@ -13,6 +13,8 @@
     v.src = ('file:'==location.protocol?'http:':'') + '//scripts.sirv.com/sirv.js';
     i.getElementsByTagName(r)[0].parentNode.appendChild(v);
 })(window, document, 'script');
+$(document).ready(function(){
+
 </script>
 <style>
   .hotspot-pointer {
@@ -24,10 +26,31 @@
     background-repeat: no-repeat;
     background: yellow;
 }
+#image-wraper{
+  visibility: visible;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    max-width: 572px;
+    max-height: 643px;
+    backface-visibility: hidden;
+    transform: translate3d(0px, 0px, 0px);
+    outline: none;
+    background-repeat: no-repeat;
+}
 </style>
 </head>
 <body>
   <div class="container" ng-controller="AppCtrl">
+    exempel url: drmartenboot-3d/boot.spin
+    <input type="text" ng-model="url">
+   <button class="btn btn-primary" ng-click="get()">get()</button>
+   <a href="//vitaliy.sirv.com/{{url}}" target="_blank">prewie</a>
     
   <!--<div class="Sirv" data-src="//vitaliy.sirv.com/drmartenboot-3d/boot.spin"></div>-->
   <div id="image-wraper">
@@ -48,12 +71,18 @@
        <select name="singleSelect" ng-model="singleSelect" ng-change="changeSelect()">
         <option value="{{key}}" ng-repeat="(key,value) in layers">{{value}}</option>
       </select><br>
+       <select ng-model="style">
+        <option value="d1">d1</option>
+        <option value="d2">d2</option>
+        <option value="d3">d3</option>
+      </select><br>
       box.x<input type="number" ng-model="settings.box.x"> <br>
       box.y<input type="number" ng-model="settings.box.y"> <br>
       pointer.style<input type="text" ng-model="settings.pointer.style"> <br>
       pointer.x<input type="text" ng-model="settings.pointer.x"> <br>
       pointer.y<input type="text" ng-model="settings.pointer.y"> <br>
-  <button class="btn btn-primary" ng-click="add()">add htospot</button>
+  <button class="btn btn-primary" ng-click="addHotspot()">add new htospot</button>
+  <button class="btn btn-primary" ng-click="add()">add htospot input</button>
   <button class="btn btn-primary" ng-click="update()">Update</button>
       
   </div>
