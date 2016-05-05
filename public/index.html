@@ -1,92 +1,339 @@
 <!DOCTYPE>
 <html ng-app="myApp">
-<head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script>
-(function(s,i,r,v) {
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+
+  <script>
+    (function(s,i,r,v) {
     v = i.createElement(r); v.async=1;
     v.src = ('file:'==location.protocol?'http:':'') + '//scripts.sirv.com/sirv.js';
     i.getElementsByTagName(r)[0].parentNode.appendChild(v);
 })(window, document, 'script');
-$(document).ready(function(){
-
-</script>
-<style>
-  .hotspot-pointer {
-    display: inline-block;
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background: yellow;
-}
-#image-wraper{
-  visibility: visible;
-    -webkit-user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-    vertical-align: middle;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    max-width: 572px;
-    max-height: 643px;
-    backface-visibility: hidden;
-    transform: translate3d(0px, 0px, 0px);
-    outline: none;
-    background-repeat: no-repeat;
-}
-</style>
-</head>
-<body>
-  <div class="container" ng-controller="AppCtrl">
-    exempel url: drmartenboot-3d/boot.spin
-    <input type="text" ng-model="url">
-   <button class="btn btn-primary" ng-click="get()">get()</button>
-   <a href="//vitaliy.sirv.com/{{url}}" target="_blank">prewie</a>
+  </script>
+  <style>
+    .hotspot-pointer {
+      display: inline-block;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background: yellow;
+    }
     
-  <!--<div class="Sirv" data-src="//vitaliy.sirv.com/drmartenboot-3d/boot.spin"></div>-->
-  <div id="image-wraper">
-    <img id="image" ng-src="{{img}}" style="max-width: 100%;">
-  </div>
-   <button class="btn btn-primary" ng-click="back()">back</button>
-  <button class="btn btn-primary" ng-click="forward()">forward</button>
-  <!--<button class="btn btn-primary" ng-click="get()">Get</button>-->
- <div>
-      <div ng-repeat="hotspot in core.settings.hotspots">
-        <button ng-click="click(hotspot, $index)">{{$index}}</button>
+    #image-wraper {
+      visibility: visible;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      vertical-align: middle;
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      max-width: 572px;
+      max-height: 643px;
+      backface-visibility: hidden;
+      transform: translate3d(0px, 0px, 0px);
+      outline: none;
+      background-repeat: no-repeat;
+    }
+    
+    .wrapper {
+      width: 640px;
+      height: 480px;
+      margin: 10px auto;
+    }
+    
+    .left_right {
+      position: absolute;
+      display: none;
+      cursor: pointer;
+      margin: -288px 0 0 10px;
+    }
+    
+    #largeImg {
+      border: solid 1px #ccc;
+      width: 550px;
+      height: 400px;
+      padding: 5px;
+    }
+    
+    #thumbs a {
+      border: solid 1px #ccc;
+      width: 100px;
+      height: 100px;
+      padding: 3px;
+      margin: 2px;
+      float: left;
+    }
+    
+    #thumbs a:hover {
+      border-color: #FF9900;
+    }
+    
+    #thumbs li {
+      list-style: none;
+    }
+    
+    #thumbs {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .row-right {
+      cursor: pointer;
+      display: block;
+      height: 40px;
+      margin-top: -20px;
+      position: absolute;
+      margin-left: 500px;
+      top: 50%;
+      width: 40px;
+      z-index: 1001;
+    }
+    
+    .row-left {
+      cursor: pointer;
+      display: block;
+      height: 40px;
+      margin-top: -20px;
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      z-index: 1001;
+    }
+    
+    
+    
+ .carousel  {
+   max-width: 1080px; /* ширина всего блока */
+   margin: 50px auto;
+   width:100%;
+}
+.carousel-wrapper {
+   margin: 10px 30px; /* отступы для стрелок */
+   overflow: hidden; /* скрываем содержимое, выходящее за рамки основной области */
+   position:relative;
+}
+.carousel-items {
+   width: 10000px; /* устанавливаем большую ширину для набора элементов */
+   position: relative; /* позиционируем блок относительно основной области карусели */
+}
+.carousel-block {
+   float: left; /* выстраиваем все элементы карусели в ряд */
+   width: 250px; /* задаём ширину каждого элемента */
+   padding: 10px 10px 10px 0px; /* делаем оступы, чтобы элементы не сливались */
+}
+.carousel-block img{
+	display:block;
+}
+
+/*********** BUTTONS ***********/
+.carousel-button-left a, .carousel-button-right a{
+   width: 25px; 
+   height: 36px; 
+   position: relative;
+   top: 80px; 
+   cursor: pointer; 
+   text-decoration:none;
+}
+.carousel-button-left a{
+   float: left; 
+   background: url(../images/carousel-left.png); 
+}
+.carousel-button-right a{
+   float: right;
+   background: url(../images/carousel-right.png); 
+}
+
+/*********** SHADOW ***********/
+.shadow{
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+   
+  </style>
+</head>
+
+<body ng-controller="AppCtrl">
+  <!--<p><img id="largeImg" src="https://js.cx/gallery/img1-lg.jpg" alt="Large image"></p>-->
+
+  <div layout="row" layout-align="space-around">
+    <div flex="5">
+    </div>
+
+    <div>
+      <div id="image-wraper" ng-if="getFlag">
+        <img id="image" ng-mousemove="bigImg($event,this)" ng-src="{{img}}" style="max-width: 100%;">
+        <!--<img id="image" src="http://image.made-in-china.com/2f0j10zvqaBpOnroYJ/Super-White-Polished-Tile-with.jpg" style="max-width: 100%;">-->
+        <button class="btn btn-primary row-left" ng-click="back()"> < </button>
+        <button class="btn btn-primary row-right" ng-click="forward()"> ></button>
       </div>
-      <br>
-      <br>
-      Selected object: {{index}}<br>
-      <input type="text" ng-model="htospot.data">
-      <br>
-       <select name="singleSelect" ng-model="singleSelect" ng-change="changeSelect()">
-        <option value="{{key}}" ng-repeat="(key,value) in layers">{{value}}</option>
-      </select><br>
+      <!--<ul id="thumbs">
+        <li ng-repeat="i in imgArr">
+          <a ng-click="set($index)"><img ng-src="//vitaliy.sirv.com/{{folder}}/{{i}}" style="max-width: 100%;"></a>
+        </li>
+      </ul>-->
+      <!--<div id="carousel" class="carousel">
+    <button class="arrow prev">⇦</button>-->
+    <div class="" ng-if="getFlag">
+      <div class="carousel shadow"> 
+          <div class="carousel-button-left"><a href="#"><</a></div> 
+          <div class="carousel-button-right"><a href="#">></a></div> 
+        <div class="carousel-wrapper"> 
+          <div class="carousel-items"> 
+            <div  class="carousel-block" ng-repeat="i in imgArr">
+              <a ng-click="set($index)"><img ng-src="//vitaliy.sirv.com/{{folder}}/{{i}}" style="max-width: 100%;"></a>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!--<button class="arrow next">⇨</button>
+  </div>-->
+    </div>
+
+
+    <div class="container" flex="30">
+
+
+      exempel url: drmartenboot-3d/boot.spin
+      <md-input-container class="md-block">
+        <label>Folder name</label>
+        <input required md-no-asterisk name="description" type="text" ng-model="folder">
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Spin name</label>
+        <input required md-no-asterisk name="description" type="text" ng-model="spin">
+      </md-input-container>
+      <md-button  class="md-raised md-primary" ng-click="get()">Get Spin</md-button>
+      <md-button ng-click="daletedFrame()" class="md-raised md-warn">Delete Hotspot</md-button>
+      <md-button ng-click="daletedFrames()" class="md-raised md-warn">Delete All Hotspots</md-button>
+      <!--<div class="Sirv" data-src="//vitaliy.sirv.com/drmartenboot-3d/boot.spin"></div>-->
+
+
+      <!--<button class="btn btn-primary" ng-click="get()">Get</button>-->
+      <div>
+        <div ng-repeat="hotspot in core.settings.hotspots">
+          <md-button class="md-raised md-primary" ng-click="click(hotspot, $index)">Hotspots Grup #{{$index}}</md-button>
+        </div>
+        <br>
+        <br> Selected Hotspots Grup #{{index}}<br>
+        <!--<input type="text" ng-model="htospot.data">-->
+        <md-input-container class="md-block">
+          <label>Hotspots Message</label>
+          <input required md-no-asterisk name="description" type="text" ng-model="actionData" ng-change="changeMessage()">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Action URL</label>
+          <input required md-no-asterisk name="description" type="text" ng-model="actionURL" ng-change="changeMessage()">
+        </md-input-container>
+        <br>
+        <md-input-container class="md-block">
+          <label>Size Message Box X</label>
+          <input required md-no-asterisk name="description" type="number" ng-model="messageX">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Size Message Box Y</label>
+          <input required md-no-asterisk name="description" type="number" ng-model="messageY">
+        </md-input-container>
+        <!--<select name="singleSelect" ng-model="singleSelect" ng-change="changeSelect()">
+          <option value="{{key}}" ng-repeat="(key,value) in layers">{{value}}</option>
+        </select>-->
+        <br>
        <select ng-model="style">
         <option value="d1">d1</option>
         <option value="d2">d2</option>
         <option value="d3">d3</option>
       </select><br>
-      box.x<input type="number" ng-model="settings.box.x"> <br>
-      box.y<input type="number" ng-model="settings.box.y"> <br>
-      pointer.style<input type="text" ng-model="settings.pointer.style"> <br>
-      pointer.x<input type="text" ng-model="settings.pointer.x"> <br>
-      pointer.y<input type="text" ng-model="settings.pointer.y"> <br>
-  <button class="btn btn-primary" ng-click="addHotspot()">add new htospot</button>
-  <button class="btn btn-primary" ng-click="add()">add htospot input</button>
-  <button class="btn btn-primary" ng-click="update()">Update</button>
-      
+        <!--<md-input-container>
+          <label>Style</label>
+          <md-select ng-model="style">
+              <md-option value="d1">d1</md-option>
+              <md-option value="d2">d2</md-option>
+              <md-option value="d3">d3</md-option>
+            </md-select>
+        </md-input-container>-->
+        <!--box.x
+        <input type="number" ng-model="settings.box.x"> <br> box.y
+        <input type="number" ng-model="settings.box.y"> <br> -->
+        <!--pointer.style
+        <input type="text" ng-model="settings.pointer.style"> -->
+        <!--<br> pointer.x
+        <input type="text" ng-model="settings.pointer.x"> <br> pointer.y
+        <input type="text" ng-model="settings.pointer.y"> <br>-->
+        <md-button class="md-raised md-primary" ng-click="addHotspot()">add new htospot</md-button>
+        <!--<button class="btn btn-primary" ng-click="add()">add htospot input</button>-->
+        <md-button class="md-raised md-primary" ng-click="update()">Update</md-button>
+
+      </div>
+    </div>
   </div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
-<script src="controllers/controller.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  <script src="controllers/controller.js"></script>
+
 </body>
+<script>
+ 
+    //Обработка клика на стрелку вправо
+$(document).on('click', ".carousel-button-right",function(){ 
+	var carusel = $(this).parents('.carousel');
+	right_carusel(carusel);
+	return false;
+});
+//Обработка клика на стрелку влево
+$(document).on('click',".carousel-button-left",function(){ 
+	var carusel = $(this).parents('.carousel');
+	left_carusel(carusel);
+	return false;
+});
+function left_carusel(carusel){
+   var block_width = $(carusel).find('.carousel-block').outerWidth();
+   $(carusel).find(".carousel-items .carousel-block").eq(-1).clone().prependTo($(carusel).find(".carousel-items")); 
+   $(carusel).find(".carousel-items").css({"left":"-"+block_width+"px"});
+   $(carusel).find(".carousel-items .carousel-block").eq(-1).remove();    
+   $(carusel).find(".carousel-items").animate({left: "0px"}, 200); 
+   
+}
+function right_carusel(carusel){
+   var block_width = $(carusel).find('.carousel-block').outerWidth();
+   $(carusel).find(".carousel-items").animate({left: "-"+ block_width +"px"}, 200, function(){
+	  $(carusel).find(".carousel-items .carousel-block").eq(0).clone().appendTo($(carusel).find(".carousel-items")); 
+      $(carusel).find(".carousel-items .carousel-block").eq(0).remove(); 
+      $(carusel).find(".carousel-items").css({"left":"0px"}); 
+   }); 
+}
+
+$(function() {
+//Раскомментируйте строку ниже, чтобы включить автоматическую прокрутку карусели
+	auto_right('.carousel:first');
+})
+
+// Автоматическая прокрутка
+function auto_right(carusel){
+	setInterval(function(){
+		if (!$(carusel).is('.hover'))
+			right_carusel(carusel);
+	}, 3000)
+}
+// Навели курсор на карусель
+$(document).on('mouseenter', '.carousel', function(){$(this).addClass('hover')})
+//Убрали курсор с карусели
+$(document).on('mouseleave', '.carousel', function(){$(this).removeClass('hover')})
+
+</script>
+
 </html>
