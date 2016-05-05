@@ -128,6 +128,7 @@ myApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
         var element = $scope.core.settings.hotspots[key];
 
         if (key !== "undefined" && element && Object.keys(element.frames).length !== 0) {
+         
           obj[key] = $scope.core.settings.hotspots[key];
         }
       }
@@ -276,8 +277,8 @@ myApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
             "y": y + "%"
           },
           "box": {
-            "x": 20,
-            "y": 20
+            "x": $scope.messageX || 20,
+            "y": $scope.messageY || 20
           }
         };
 
@@ -343,8 +344,8 @@ myApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
           "y": y + "%"
         },
         "box": {
-          "x": 20,
-          "y": 20
+          "x": $scope.messageX || 20,
+            "y": $scope.messageY || 20
         }
       };
 

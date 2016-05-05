@@ -165,18 +165,18 @@
 
 <body ng-controller="AppCtrl">
   <!--<p><img id="largeImg" src="https://js.cx/gallery/img1-lg.jpg" alt="Large image"></p>-->
-
+ <div id="image-wraper">
+        <img id="image" ng-mousemove="bigImg($event,this)" ng-src="{{img}}" style="max-width: 100%;">
+        <!--<img id="image" src="http://image.made-in-china.com/2f0j10zvqaBpOnroYJ/Super-White-Polished-Tile-with.jpg" style="max-width: 100%;">-->
+        <button class="btn btn-primary row-left" ng-click="back()" ng-if="getFlag"> < </button>
+        <button class="btn btn-primary row-right" ng-click="forward()" ng-if="getFlag"> ></button>
+      </div>
   <div layout="row" layout-align="space-around">
     <div flex="5">
     </div>
 
     <div>
-      <div id="image-wraper" ng-if="getFlag">
-        <img id="image" ng-mousemove="bigImg($event,this)" ng-src="{{img}}" style="max-width: 100%;">
-        <!--<img id="image" src="http://image.made-in-china.com/2f0j10zvqaBpOnroYJ/Super-White-Polished-Tile-with.jpg" style="max-width: 100%;">-->
-        <button class="btn btn-primary row-left" ng-click="back()"> < </button>
-        <button class="btn btn-primary row-right" ng-click="forward()"> ></button>
-      </div>
+     
       <!--<ul id="thumbs">
         <li ng-repeat="i in imgArr">
           <a ng-click="set($index)"><img ng-src="//vitaliy.sirv.com/{{folder}}/{{i}}" style="max-width: 100%;"></a>
@@ -205,7 +205,7 @@
     <div class="container" flex="30">
 
 
-      exempel url: drmartenboot-3d/boot.spin
+      exempel folder: drmartenboot-3d , name:boot.spin
       <md-input-container class="md-block">
         <label>Folder name</label>
         <input required md-no-asterisk name="description" type="text" ng-model="folder">
