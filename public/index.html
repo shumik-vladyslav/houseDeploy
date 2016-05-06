@@ -113,52 +113,21 @@
     }
     
     
-    
- .carousel  {
-   max-width: 1080px; /* ширина всего блока */
-   margin: 50px auto;
-   width:100%;
-}
-.carousel-wrapper {
-   margin: 10px 30px; /* отступы для стрелок */
-   overflow: hidden; /* скрываем содержимое, выходящее за рамки основной области */
-   position:relative;
-}
-.carousel-items {
-   width: 10000px; /* устанавливаем большую ширину для набора элементов */
-   position: relative; /* позиционируем блок относительно основной области карусели */
-}
-.carousel-block {
-   float: left; /* выстраиваем все элементы карусели в ряд */
-   width: 250px; /* задаём ширину каждого элемента */
-   padding: 10px 10px 10px 0px; /* делаем оступы, чтобы элементы не сливались */
-}
-.carousel-block img{
-	display:block;
-}
-
-/*********** BUTTONS ***********/
-.carousel-button-left a, .carousel-button-right a{
-   width: 25px; 
-   height: 36px; 
-   position: relative;
-   top: 80px; 
-   cursor: pointer; 
-   text-decoration:none;
-}
-.carousel-button-left a{
-   float: left; 
-   background: url(../images/carousel-left.png); 
-}
-.carousel-button-right a{
-   float: right;
-   background: url(../images/carousel-right.png); 
-}
-
-/*********** SHADOW ***********/
-.shadow{
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-}
+    .jcarousel-wrapper{
+      margin: 20px auto;
+    position: relative;
+    border: 10px solid #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 2px #999;
+    -moz-box-shadow: 0 0 2px #999;
+    box-shadow: 0 0 2px #999;
+    max-width: 620px;
+    padding: 0 20px 40px 20px;
+    margin: auto;
+    }
+ 
    
   </style>
 </head>
@@ -184,18 +153,33 @@
       </ul>-->
       <!--<div id="carousel" class="carousel">
     <button class="arrow prev">⇦</button>-->
-    <div class="" ng-if="getFlag">
+    <!--<div class="" ng-if="getFlag">
       <div class="carousel shadow"> 
           <div class="carousel-button-left"><a href="#"><</a></div> 
           <div class="carousel-button-right"><a href="#">></a></div> 
         <div class="carousel-wrapper"> 
           <div class="carousel-items"> 
             <div  class="carousel-block" ng-repeat="i in imgArr">
+              {{$index}}
               <a ng-click="set($index)"><img ng-src="//vitaliy.sirv.com/{{folder}}/{{i}}" style="max-width: 100%;"></a>
            </div>
           </div>
         </div>
       </div>
+    </div>-->
+    <div class="jcarousel-wrapper"   ng-show="getFlag">
+        <div class="jcarousel">
+            <ul>
+                <li ng-repeat="i in imgArr">
+                  <a ng-click="set($index)"><img ng-src="//vitaliy.sirv.com/{{folder}}/{{i}}" style="max-width: 100%;"></a>
+                </li>
+            </ul>
+        </div>
+
+        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+        <p class="jcarousel-pagination"></p>
     </div>
       <!--<button class="arrow next">⇨</button>
   </div>-->
@@ -205,7 +189,7 @@
     <div class="container" flex="30">
 
 
-      exempel folder: drmartenboot-3d , name:boot.spin
+      exempel folder: drmartenboot-3d , name: boot.spin
       <md-input-container class="md-block">
         <label>Folder name</label>
         <input required md-no-asterisk name="description" type="text" ng-model="folder">
@@ -215,6 +199,7 @@
         <input required md-no-asterisk name="description" type="text" ng-model="spin">
       </md-input-container>
       <md-button  class="md-raised md-primary" ng-click="get()">Get Spin</md-button>
+      <md-button class="md-raised md-primary" ng-click="addHotspot()">add new htospots grup</md-button>
       <md-button ng-click="daletedFrame()" class="md-raised md-warn">Delete Hotspot</md-button>
       <md-button ng-click="daletedFrames()" class="md-raised md-warn">Delete All Hotspots</md-button>
       <!--<div class="Sirv" data-src="//vitaliy.sirv.com/drmartenboot-3d/boot.spin"></div>-->
@@ -249,7 +234,7 @@
           <option value="{{key}}" ng-repeat="(key,value) in layers">{{value}}</option>
         </select>-->
         <br>
-       <select ng-model="style">
+       <select class="form-control" ng-model="style">
         <option value="d1">d1</option>
         <option value="d2">d2</option>
         <option value="d3">d3</option>
@@ -270,7 +255,6 @@
         <!--<br> pointer.x
         <input type="text" ng-model="settings.pointer.x"> <br> pointer.y
         <input type="text" ng-model="settings.pointer.y"> <br>-->
-        <md-button class="md-raised md-primary" ng-click="addHotspot()">add new htospot</md-button>
         <!--<button class="btn btn-primary" ng-click="add()">add htospot input</button>-->
         <md-button class="md-raised md-primary" ng-click="update()">Update</md-button>
 
@@ -283,56 +267,59 @@
   <script src="src/angular-aria.min.js"></script>
   <script src="src/angular-messages.min.js"></script>
   <script src="src/angular-material.min.js"></script>
+  <script src="src/jquery.jcarousel.min.js"></script>
+  <script src="src/jcarousel.responsive.js"></script>
+  <link rel="stylesheet" href="src/jcarousel.responsive.css">
   <script src="controllers/controller.js"></script>
 
 </body>
 <script>
  
-    //Обработка клика на стрелку вправо
-$(document).on('click', ".carousel-button-right",function(){ 
-	var carusel = $(this).parents('.carousel');
-	right_carusel(carusel);
-	return false;
-});
-//Обработка клика на стрелку влево
-$(document).on('click',".carousel-button-left",function(){ 
-	var carusel = $(this).parents('.carousel');
-	left_carusel(carusel);
-	return false;
-});
-function left_carusel(carusel){
-   var block_width = $(carusel).find('.carousel-block').outerWidth();
-   $(carusel).find(".carousel-items .carousel-block").eq(-1).clone().prependTo($(carusel).find(".carousel-items")); 
-   $(carusel).find(".carousel-items").css({"left":"-"+block_width+"px"});
-   $(carusel).find(".carousel-items .carousel-block").eq(-1).remove();    
-   $(carusel).find(".carousel-items").animate({left: "0px"}, 200); 
+//     //Обработка клика на стрелку вправо
+// $(document).on('click', ".carousel-button-right",function(){ 
+// 	var carusel = $(this).parents('.carousel');
+// 	right_carusel(carusel);
+// 	return false;
+// });
+// //Обработка клика на стрелку влево
+// $(document).on('click',".carousel-button-left",function(){ 
+// 	var carusel = $(this).parents('.carousel');
+// 	left_carusel(carusel);
+// 	return false;
+// });
+// function left_carusel(carusel){
+//    var block_width = $(carusel).find('.carousel-block').outerWidth();
+//    $(carusel).find(".carousel-items .carousel-block").eq(-1).clone().prependTo($(carusel).find(".carousel-items")); 
+//    $(carusel).find(".carousel-items").css({"left":"-"+block_width+"px"});
+//    $(carusel).find(".carousel-items .carousel-block").eq(-1).remove();    
+//    $(carusel).find(".carousel-items").animate({left: "0px"}, 200); 
    
-}
-function right_carusel(carusel){
-   var block_width = $(carusel).find('.carousel-block').outerWidth();
-   $(carusel).find(".carousel-items").animate({left: "-"+ block_width +"px"}, 200, function(){
-	  $(carusel).find(".carousel-items .carousel-block").eq(0).clone().appendTo($(carusel).find(".carousel-items")); 
-      $(carusel).find(".carousel-items .carousel-block").eq(0).remove(); 
-      $(carusel).find(".carousel-items").css({"left":"0px"}); 
-   }); 
-}
+// }
+// function right_carusel(carusel){
+//    var block_width = $(carusel).find('.carousel-block').outerWidth();
+//    $(carusel).find(".carousel-items").animate({left: "-"+ block_width +"px"}, 200, function(){
+// 	  $(carusel).find(".carousel-items .carousel-block").eq(0).clone().appendTo($(carusel).find(".carousel-items")); 
+//       $(carusel).find(".carousel-items .carousel-block").eq(0).remove(); 
+//       $(carusel).find(".carousel-items").css({"left":"0px"}); 
+//    }); 
+// }
 
-$(function() {
-//Раскомментируйте строку ниже, чтобы включить автоматическую прокрутку карусели
-	auto_right('.carousel:first');
-})
+// // $(function() {
+// // //Раскомментируйте строку ниже, чтобы включить автоматическую прокрутку карусели
+// // 	auto_right('.carousel:first');
+// // })
 
-// Автоматическая прокрутка
-function auto_right(carusel){
-	setInterval(function(){
-		if (!$(carusel).is('.hover'))
-			right_carusel(carusel);
-	}, 3000)
-}
-// Навели курсор на карусель
-$(document).on('mouseenter', '.carousel', function(){$(this).addClass('hover')})
-//Убрали курсор с карусели
-$(document).on('mouseleave', '.carousel', function(){$(this).removeClass('hover')})
+// // Автоматическая прокрутка
+// // function auto_right(carusel){
+// // 	setInterval(function(){
+// // 		if (!$(carusel).is('.hover'))
+// // 			right_carusel(carusel);
+// // 	}, 3000)
+// // }
+// // Навели курсор на карусель
+// $(document).on('mouseenter', '.carousel', function(){$(this).addClass('hover')})
+// //Убрали курсор с карусели
+// $(document).on('mouseleave', '.carousel', function(){$(this).removeClass('hover')})
 
 </script>
 

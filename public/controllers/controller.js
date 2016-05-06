@@ -198,8 +198,11 @@ myApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
     var imageWraper = $('#image-wraper');
     console.log($scope.core.settings.hotspots)
     var frame = $scope.core.settings.hotspots[$scope.index].frames[vm.imgIndex + 1];
+    
     if (frame) {
       var pointer = frame.pointer;
+       $scope.messageX = frame.box.x;
+       $scope.messageY = frame.box.y;
       if (pointer) {
         var span = document.createElement("span");
         span.id = "frame";
@@ -212,6 +215,9 @@ myApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 
         setDopAndDrow();
       }
+    }else{
+      $scope.messageX = 0;
+    $scope.messageY = 0;
     }
   }
 
