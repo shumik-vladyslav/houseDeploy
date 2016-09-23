@@ -1,0 +1,54 @@
+<div>
+    <section layout="column" layout="space-around center" layout-gt-md="row" layout-wrap layout-align-gt-md="space-around start">
+        <div class="card" flex-gt-md="45" ng-repeat="item in main.data">
+            <div layout="row">
+                <div flex="15"></div>
+                <h1 flex="45">Name</h1>
+            </div>
+            <md-card layout="row">
+                <div class="left-card background-card-{{($index) % 4}}" layout="column" layout-align="center center" flex="50">
+                    <div class="row-stat" layout="row" layout-align="center center">
+                        <md-icon flex="5" md-svg-src="assets/icons/delete.svg" class="white"></md-icon>
+                        <span flex="60">CURRENT TEMPERATURE</span>
+                        <div class="big-value" flex="25">{{item.temperature}}&deg;C </div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div class="row-stat" layout="row" layout-align="center center">
+                        <md-icon flex="5" md-svg-src="assets/icons/delete.svg" class="white"></md-icon>
+                        <span flex="60">CURRENT OCCUPANCY</span>
+                        <div class="big-value" flex="25">30 %</div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div class="row-stat" layout="row" layout-align="center center">
+                        <md-icon flex="5" md-svg-src="assets/icons/delete.svg" class="white"></md-icon>
+                        <span flex="60">APP MODE</span>
+                        <div ng-if="item.comfort_active" class="big-value" flex="25">ON</div>
+                        <div ng-if="!item.comfort_active" class="big-value" flex="25">OFF</div>
+                    </div>
+                </div>
+                <div class="right-card-{{($index) % 4}}" flex="50" layout="row">
+                    <div flex="80" layout="column" layout-align="center center">
+                        <span class="desired-temperature" layout="row">
+                            DESIRED TEMPERATURE
+                        </span>
+                        <div class="big-degree">
+                            {{item.temperature.comfort_status}}&deg;C
+                            {{main.getDesired(item)}}
+                        </div>
+                    </div>
+                    <div flex="20" layout="column" layout-align="center center">
+                        <md-button ng-disabled="item.comfort_active" class="md-fab md-mini" ng-click="main.swapComfort(item,false)">
+                            <md-icon md-svg-src="assets/icons/add.svg" class="white"></md-icon>
+                        </md-button>
+                        <md-button ng-disabled="!item.comfort_active" class="md-fab md-mini" ng-click="main.swapComfort(item,false)">
+                            <md-icon md-svg-src="assets/icons/archive.svg" class="white"></md-icon>
+                        </md-button>
+                        <md-button class="md-fab md-mini">
+                            <md-icon md-svg-src="assets/icons/edit.svg" class="white"></md-icon>
+                        </md-button>
+                    </div>
+                </div>
+            </md-card>
+        </div>
+    </section>
+</div>

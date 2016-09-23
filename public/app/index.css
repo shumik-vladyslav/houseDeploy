@@ -1,0 +1,443 @@
+/**
+ *  Do not remove the comment below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+
+@font-face {
+    font-family: 'Raleway Thin';
+    src: url('../fonts/raleway-thin-webfont.eot');
+    src: url('../fonts/raleway-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-thin-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-thin-webfont.woff') format('woff'),
+         url('../fonts/raleway-thin-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-thin-webfont.svg#ralewaythin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Raleway Extra Light';
+    src: url('../fonts/raleway-extralight-webfont.eot');
+    src: url('../fonts/raleway-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-extralight-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-extralight-webfont.woff') format('woff'),
+         url('../fonts/raleway-extralight-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-extralight-webfont.svg#ralewayextralight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Raleway Light';
+    src: url('../fonts/raleway-light-webfont.eot');
+    src: url('../fonts/raleway-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-light-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-light-webfont.woff') format('woff'),
+         url('../fonts/raleway-light-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-light-webfont.svg#ralewaylight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/raleway-regular-webfont.eot');
+    src: url('../fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-regular-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-regular-webfont.woff') format('woff'),
+         url('../fonts/raleway-regular-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-regular-webfont.svg#ralewayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Raleway Black';
+    src: url('../fonts/raleway-black-webfont.eot');
+    src: url('../fonts/raleway-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-black-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-black-webfont.woff') format('woff'),
+         url('../fonts/raleway-black-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-black-webfont.svg#ralewayblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Raleway Bold';
+    src: url('../fonts/raleway-bold-webfont.eot');
+    src: url('../fonts/raleway-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-bold-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-bold-webfont.woff') format('woff'),
+         url('../fonts/raleway-bold-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-bold-webfont.svg#ralewaybold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Raleway Extra Bold';
+    src: url('../fonts/raleway-extrabold-webfont.eot');
+    src: url('../fonts/raleway-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-extrabold-webfont.woff') format('woff'),
+         url('../fonts/raleway-extrabold-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-extrabold-webfont.svg#ralewayextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Raleway Medium';
+    src: url('../fonts/raleway-medium-webfont.eot');
+    src: url('../fonts/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-medium-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-medium-webfont.woff') format('woff'),
+         url('../fonts/raleway-medium-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-medium-webfont.svg#ralewaymedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Raleway Semibold';
+    src: url('../fonts/raleway-semibold-webfont.eot');
+    src: url('../fonts/raleway-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-semibold-webfont.woff') format('woff'),
+         url('../fonts/raleway-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-semibold-webfont.svg#ralewaysemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+$primary-color: #006A85;
+
+$primary-dark-color: #004759;
+
+$primary-light-color: #7fa3ac;
+
+$family-Raleway-semibold: "Raleway Semibold";
+
+html {
+  font-family: 'Raleway', serif;
+}
+.wrap{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7fbfc+0,d9edf2+41,add9e4+100 */
+background: #f7fbfc; /* Old browsers */
+background: -moz-linear-gradient(top,  #f7fbfc 0%, #d9edf2 41%, #add9e4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f7fbfc 0%,#d9edf2 41%,#add9e4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f7fbfc 0%,#d9edf2 41%,#add9e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
+width: 100%;
+height: 100%;
+}
+
+h1{
+    color: #68859c;
+}
+.card{
+ 
+}
+.card md-card{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.card-occupancy md-card{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.left-card{
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.left-card div{
+    width: 100%;
+    color: white;
+}
+
+.big-degree{
+    font-size: 100px;
+}
+
+.big-value{
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.card-occupancy md-card{
+    height: 200px;
+}
+
+.occupancy{
+    background: #e0e0e0;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+
+.amcharts-export-menu-top-right {
+  top: 10px;
+  right: 0;
+}
+
+.background-card-0{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3fb3d1+0,758da0+56,758da0+56,828493+75,a0706e+100 */
+    background: #3fb3d1; /* Old browsers */
+    background: -moz-linear-gradient(left,  #3fb3d1 0%, #758da0 56%, #758da0 56%, #828493 75%, #a0706e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #3fb3d1 0%,#758da0 56%,#758da0 56%,#828493 75%,#a0706e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #3fb3d1 0%,#758da0 56%,#758da0 56%,#828493 75%,#a0706e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3fb3d1', endColorstr='#a0706e',GradientType=1 ); /* IE6-9 */
+}
+
+.right-card-0{
+    color:#cc3132;
+}
+
+.right-card-0 div .md-button {
+  color : #cc3132;
+   background-color: #cc3132;
+}
+
+.right-card-0 div .md-button:not([disabled]):hover {
+  background-color: #a70001;
+}
+
+.right-card-0 div .md-button[disabled] {
+  color : #cc3132;
+  background-color: transparent;
+}
+
+.background-card-1{
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#88a650+0,af9e1e+50,cd9d20+71,cd9d20+75,cd9d20+100 */
+background: #88a650; /* Old browsers */
+background: -moz-linear-gradient(left,  #88a650 0%, #af9e1e 50%, #cd9d20 71%, #cd9d20 75%, #cd9d20 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #88a650 0%,#af9e1e 50%,#cd9d20 71%,#cd9d20 75%,#cd9d20 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #88a650 0%,#af9e1e 50%,#cd9d20 71%,#cd9d20 75%,#cd9d20 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88a650', endColorstr='#cd9d20',GradientType=1 ); /* IE6-9 */
+}
+
+.right-card-1{
+    color:#e89b22;
+}
+.right-card-1 div .md-button {
+  color : #e89b22;
+}
+
+.right-card-1 div .md-button:not([disabled]):hover {
+  background-color: #e89b22;
+}
+
+.right-card-1 div .md-button[disabled] {
+  color : #e89b22;
+  background-color: transparent;
+}
+
+.background-card-2{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d4d2d0+1,d3d3d3+51,d3d3d3+100 */
+background: #d4d2d0; /* Old browsers */
+background: -moz-linear-gradient(left,  #d4d2d0 1%, #d3d3d3 51%, #d3d3d3 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #d4d2d0 1%,#d3d3d3 51%,#d3d3d3 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #d4d2d0 1%,#d3d3d3 51%,#d3d3d3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4d2d0', endColorstr='#d3d3d3',GradientType=1 ); /* IE6-9 */
+}
+
+.right-card-2{
+    color:#d2d2d2;
+}
+
+.right-card-2 div .md-button {
+  color : #d2d2d2;
+   background-color: #d2d2d2;
+}
+
+.right-card-2 div .md-button:not([disabled]):hover {
+  background-color: #7f7f7f;
+}
+
+.right-card-2 div .md-button[disabled] {
+  color : #d2d2d2;
+  background-color: transparent;
+}
+
+.background-card-3{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c54e3e+0,ce5237+51,dc731e+100 */
+background: #c54e3e; /* Old browsers */
+background: -moz-linear-gradient(left,  #c54e3e 0%, #ce5237 51%, #dc731e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #c54e3e 0%,#ce5237 51%,#dc731e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #c54e3e 0%,#ce5237 51%,#dc731e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c54e3e', endColorstr='#dc731e',GradientType=1 ); /* IE6-9 */
+}
+
+.right-card-3{
+    color:#e0811d;
+}
+
+  md-divider {
+    background-color: rgb(250,250,250);
+    color: rgb(250,250,250);
+    width: 80%;
+    margin-left: 10%
+   }
+  @media  screen and (min-device-width: 300px) and (min-width: 300px){
+    .card md-card{
+        font-size: 7px;
+        height: 110px;
+    }
+    .big-degree{
+        font-size: 50px;
+    }
+
+    .big-value{
+        font-weight: bolder;
+        font-size: 13px;
+    }
+
+    .desired-temperature{
+        font-size: 9px;
+    }
+    .left-card .row-stat{
+        margin-bottom: 5px;
+    }
+
+    .md-button {
+        padding: 0 6px 0 6px;
+        margin: 6px 8px 6px 8px;
+        min-width: 1px;
+        min-height: 1px;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration:none;
+        border: none;
+        outline: none;
+    }
+    .md-button.md-fab.md-mini {
+        line-height: 40px;
+        width: 25px;
+        height: 25px;
+    }
+    .md-button.md-icon-button md-icon, button.md-button.md-fab md-icon {
+        display: table-row;
+    }
+ }
+ 
+@media  screen and (min-device-width: 375px) and (min-width: 375px){
+   .card md-card{
+        font-size: 8px;
+        height: 110px;
+    }
+     .big-value{
+        font-weight: bolder;
+        font-size: 15px;
+    }
+     .big-degree{
+        font-size: 50px;
+    }
+}
+
+@media  screen and (min-device-width: 768px) and (min-width: 768px){
+   .card md-card{
+        font-size: 13px;
+        height: 110px;
+    }
+     .big-value{
+        font-weight: bolder;
+        font-size: 20px;
+    }
+     .big-degree{
+        font-size: 60px;
+    }
+    .desired-temperature{
+        font-size: 13px;
+    }
+    .card md-card{
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+}
+
+  @media  screen and (min-device-width: 960px) and (min-width: 960px){
+    .card md-card{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+  .card-occupancy md-card{
+        height: 200px;
+        border-radius: 10px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+ }
+
+  @media  screen and (min-device-width: 1280px) and (min-width: 1280px){
+     .card md-card{
+        width: 100%;
+        height: 150px;
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    .card-occupancy md-card{
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+      .md-button {
+        padding: 0 6px 0 6px;
+        margin: 6px 8px 6px 8px;
+        min-width: 1px;
+        min-height: 1px;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration:none;
+        border: none;
+        outline: none;
+    }
+    .md-button.md-fab.md-mini {
+        line-height: 40px;
+        width: 45px;
+        height: 45px;
+    }
+    .md-button.md-icon-button md-icon, button.md-button.md-fab md-icon {
+        display: table-row;
+    }
+ }

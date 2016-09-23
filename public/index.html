@@ -1,328 +1,81 @@
-<!DOCTYPE>
-<html ng-app="myApp">
+<!doctype html>
+<html ng-app="Messages">
 
 <head>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Messages</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="src/angular-material.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
 
+  <!-- build:css({.tmp/serve,src}) styles/app.css -->
+  <!-- inject:css -->
+  <!-- css files will be automatically insert here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+   <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
 
-  <script>
-    (function(s,i,r,v) {
-    v = i.createElement(r); v.async=1;
-    v.src = ('file:'==location.protocol?'http:':'') + '//scripts.sirv.com/sirv.js';
-    i.getElementsByTagName(r)[0].parentNode.appendChild(v);
-})(window, document, 'script');
-  </script>
-  <style>
-    .hotspot-pointer {
-      display: inline-block;
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      cursor: pointer;
-      background-repeat: no-repeat;
-      background: yellow;
-    }
-    
-    #image-wraper {
-      visibility: visible;
-      -webkit-user-select: none;
-      -webkit-tap-highlight-color: transparent;
-      display: inline-block;
-      overflow: hidden;
-      position: relative;
-      vertical-align: middle;
-      text-decoration: none;
-      color: rgb(0, 0, 0);
-      max-width: 572px;
-      max-height: 643px;
-      backface-visibility: hidden;
-      transform: translate3d(0px, 0px, 0px);
-      outline: none;
-      background-repeat: no-repeat;
-    }
-    
-    .wrapper {
-      width: 640px;
-      height: 480px;
-      margin: 10px auto;
-    }
-    
-    .left_right {
-      position: absolute;
-      display: none;
-      cursor: pointer;
-      margin: -288px 0 0 10px;
-    }
-    
-    #largeImg {
-      border: solid 1px #ccc;
-      width: 550px;
-      height: 400px;
-      padding: 5px;
-    }
-    
-    #thumbs a {
-      border: solid 1px #ccc;
-      width: 100px;
-      height: 100px;
-      padding: 3px;
-      margin: 2px;
-      float: left;
-    }
-    
-    #thumbs a:hover {
-      border-color: #FF9900;
-    }
-    
-    #thumbs li {
-      list-style: none;
-    }
-    
-    #thumbs {
-      margin: 0;
-      padding: 0;
-    }
-    
-    .row-right {
-      cursor: pointer;
-      display: block;
-      height: 40px;
-      margin-top: -20px;
-      position: absolute;
-      margin-left: 500px;
-      top: 50%;
-      width: 40px;
-      z-index: 1001;
-    }
-    
-    .row-left {
-      cursor: pointer;
-      display: block;
-      height: 40px;
-      margin-top: -20px;
-      position: absolute;
-      top: 50%;
-      width: 40px;
-      z-index: 1001;
-    }
-    
-    
-    .jcarousel-wrapper{
-      margin: 20px auto;
-    position: relative;
-    border: 10px solid #fff;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0 0 2px #999;
-    -moz-box-shadow: 0 0 2px #999;
-    box-shadow: 0 0 2px #999;
-    max-width: 620px;
-    padding: 0 20px 40px 20px;
-    margin: auto;
-    }
- 
-   
-  </style>
+  <!-- build:css({.tmp/serve,src}) styles/app.css -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="app/index.css">
 </head>
 
-<body ng-controller="AppCtrl">
-  <!--<p><img id="largeImg" src="https://js.cx/gallery/img1-lg.jpg" alt="Large image"></p>-->
-       <div style="float: left;">
- <div id="image-wraper">
-        <img id="image" ng-mousemove="bigImg($event,this)" ng-src="{{img}}" style="max-width: 100%;">
-        <!--<img id="image" src="http://image.made-in-china.com/2f0j10zvqaBpOnroYJ/Super-White-Polished-Tile-with.jpg" style="max-width: 100%;">-->
-        <button class="btn btn-primary row-left" ng-click="back()" ng-if="getFlag"> < </button>
-        <button class="btn btn-primary row-right" ng-click="forward()" ng-if="getFlag"> ></button>
-        
-      </div>
-      
-       <div>
-     
-      <!--<ul id="thumbs">
-        <li ng-repeat="i in imgArr">
-          <a ng-click="set($index)"><img ng-src="//vitaliy.sirv.com/{{folder}}/{{i}}" style="max-width: 100%;"></a>
-        </li>
-      </ul>-->
-      <!--<div id="carousel" class="carousel">
-    <button class="arrow prev">⇦</button>-->
-    <!--<div class="" ng-if="getFlag">
-      <div class="carousel shadow"> 
-          <div class="carousel-button-left"><a href="#"><</a></div> 
-          <div class="carousel-button-right"><a href="#">></a></div> 
-        <div class="carousel-wrapper"> 
-          <div class="carousel-items"> 
-            <div  class="carousel-block" ng-repeat="i in imgArr">
-              {{$index}}
-              <a ng-click="set($index)"><img ng-src="//vitaliy.sirv.com/{{folder}}/{{i}}" style="max-width: 100%;"></a>
-           </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-    <div class="jcarousel-wrapper"   ng-show="getFlag">
-        <div class="jcarousel">
-            <ul>
-                <li ng-repeat="i in imgArr">
-                  <a ng-click="set($index)"><img ng-src="//vitaliy.sirv.com/{{folder}}/{{i}}" style="max-width: 100%;"></a>
-                </li>
-            </ul>
-        </div>
+<body>
+  <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+  <div class="wrap" ui-view></div>
 
-        <p class="jcarousel-pagination"></p>
-    </div>
-      <!--<button class="arrow next">⇨</button>
-  </div>-->
-    </div>
-    </div>
-      
-    <div class="container" flex="50" style="float: right;">
-      exempel folder: drmartenboot-3d , name: boot.spin
-      <md-input-container class="md-block">
-        <label>Folder name</label>
-        <input required md-no-asterisk name="description" type="text" ng-model="folder">
-      </md-input-container>
-      <md-input-container class="md-block">
-        <label>Spin name</label>
-        <input required md-no-asterisk name="description" type="text" ng-model="spin">
-      </md-input-container>
-      <md-button  class="md-raised md-primary" ng-click="get()">Get Spin</md-button>
-      <md-button class="md-raised md-primary" ng-click="addHotspot()">add new htospots grup</md-button>
-      <md-button ng-click="daletedFrame()" class="md-raised md-warn">Delete Hotspot</md-button>
-      <md-button ng-click="daletedFrames()" class="md-raised md-warn">Delete All Hotspots</md-button>
-      <!--<div class="Sirv" data-src="//vitaliy.sirv.com/drmartenboot-3d/boot.spin"></div>-->
+  <!-- build:js(src) scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- run `gulp inject` to automatically populate bower script dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
 
+  <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+  <!-- inject:js -->
+  <!-- js files will be automatically insert here -->
+  <!-- endinject -->
 
-      <!--<button class="btn btn-primary" ng-click="get()">Get</button>-->
-      <div  style="float: left;">
-        <br> Selected Hotspots Grup #{{index}}<br>
-        <div ng-repeat="hotspot in core.settings.hotspots">
-          <md-button class="md-raised md-primary" ng-click="click(hotspot, $index)">Hotspots Grup #{{$index}}</md-button>
-        </div>
-        <br>
-        <!--<input type="text" ng-model="htospot.data">-->
-        <div>
-        <md-input-container class="md-block">
-          <label>Hotspots Message</label>
-          <input required md-no-asterisk name="description" type="text" ng-model="actionData" ng-change="changeMessage()">
-        </md-input-container>
-        <md-input-container class="md-block">
-          <label>Action URL</label>
-          <input required md-no-asterisk name="description" type="text" ng-model="actionURL" ng-change="changeMessage()">
-        </md-input-container>
-        <br>
-        <md-input-container class="md-block">
-          <label>Size Message Box X</label>
-          <input required md-no-asterisk name="description" type="number" ng-model="messageX">
-        </md-input-container>
-        <md-input-container class="md-block">
-          <label>Size Message Box Y</label>
-          <input required md-no-asterisk name="description" type="number" ng-model="messageY">
-        </md-input-container>
-        <!--<select name="singleSelect" ng-model="singleSelect" ng-change="changeSelect()">
-          <option value="{{key}}" ng-repeat="(key,value) in layers">{{value}}</option>
-        </select>-->
-        <br>
-       <select class="form-control" ng-model="style">
-        <option value="d1">d1</option>
-        <option value="d2">d2</option>
-        <option value="d3">d3</option>
-      </select><br>
-        <!--<md-input-container>
-          <label>Style</label>
-          <md-select ng-model="style">
-              <md-option value="d1">d1</md-option>
-              <md-option value="d2">d2</md-option>
-              <md-option value="d3">d3</md-option>
-            </md-select>
-        </md-input-container>-->
-        <!--box.x
-        <input type="number" ng-model="settings.box.x"> <br> box.y
-        <input type="number" ng-model="settings.box.y"> <br> -->
-        <!--pointer.style
-        <input type="text" ng-model="settings.pointer.style"> -->
-        <!--<br> pointer.x
-        <input type="text" ng-model="settings.pointer.x"> <br> pointer.y
-        <input type="text" ng-model="settings.pointer.y"> <br>-->
-        <!--<button class="btn btn-primary" ng-click="add()">add htospot input</button>-->
-        <md-button class="md-raised md-primary" ng-click="update()">Update</md-button>
-
-      </div>
-    </div>
-
-   
-
-
-    
-
-  <script src="src/angular.min.js"></script>
-  <script src="src/angular-animate.min.js"></script>
-  <script src="src/angular-aria.min.js"></script>
-  <script src="src/angular-messages.min.js"></script>
-  <script src="src/angular-material.min.js"></script>
-  <script src="src/jquery.jcarousel.min.js"></script>
-  <script src="src/jcarousel.responsive.js"></script>
-  <link rel="stylesheet" href="src/jcarousel.responsive.css">
-  <script src="controllers/controller.js"></script>
+  <!-- inject:partials -->
+  <!-- angular templates will be automatically converted in js and inserted here -->
+  <!-- endinject -->
+  <!-- endbuild -->
 
 </body>
-<script>
- 
-//     //Обработка клика на стрелку вправо
-// $(document).on('click', ".carousel-button-right",function(){ 
-// 	var carusel = $(this).parents('.carousel');
-// 	right_carusel(carusel);
-// 	return false;
-// });
-// //Обработка клика на стрелку влево
-// $(document).on('click',".carousel-button-left",function(){ 
-// 	var carusel = $(this).parents('.carousel');
-// 	left_carusel(carusel);
-// 	return false;
-// });
-// function left_carusel(carusel){
-//    var block_width = $(carusel).find('.carousel-block').outerWidth();
-//    $(carusel).find(".carousel-items .carousel-block").eq(-1).clone().prependTo($(carusel).find(".carousel-items")); 
-//    $(carusel).find(".carousel-items").css({"left":"-"+block_width+"px"});
-//    $(carusel).find(".carousel-items .carousel-block").eq(-1).remove();    
-//    $(carusel).find(".carousel-items").animate({left: "0px"}, 200); 
-   
-// }
-// function right_carusel(carusel){
-//    var block_width = $(carusel).find('.carousel-block').outerWidth();
-//    $(carusel).find(".carousel-items").animate({left: "-"+ block_width +"px"}, 200, function(){
-// 	  $(carusel).find(".carousel-items .carousel-block").eq(0).clone().appendTo($(carusel).find(".carousel-items")); 
-//       $(carusel).find(".carousel-items .carousel-block").eq(0).remove(); 
-//       $(carusel).find(".carousel-items").css({"left":"0px"}); 
-//    }); 
-// }
-
-// // $(function() {
-// // //Раскомментируйте строку ниже, чтобы включить автоматическую прокрутку карусели
-// // 	auto_right('.carousel:first');
-// // })
-
-// // Автоматическая прокрутка
-// // function auto_right(carusel){
-// // 	setInterval(function(){
-// // 		if (!$(carusel).is('.hover'))
-// // 			right_carusel(carusel);
-// // 	}, 3000)
-// // }
-// // Навели курсор на карусель
-// $(document).on('mouseenter', '.carousel', function(){$(this).addClass('hover')})
-// //Убрали курсор с карусели
-// $(document).on('mouseleave', '.carousel', function(){$(this).removeClass('hover')})
-
-</script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-animate/angular-animate.js"></script>
+  <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="../bower_components/angular-messages/angular-messages.js"></script>
+  <script src="../bower_components/angular-aria/angular-aria.js"></script>
+  <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../bower_components/angular-material/angular-material.js"></script>
+  <script src="../bower_components/amcharts/dist/amcharts/amcharts.js"></script>
+  <script src="../bower_components/amcharts-angular/dist/amChartsDirective.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/pages/main/main.controller.js"></script>
+  <script src="app/pages/history/history.controller.js"></script>
+  <script src="app/services/auth.service.js"></script>
+  <script src="app/common/theme.config.js"></script>
+  <script src="app/common/icons.config.js"></script>
+  <script src="app/common/dialog.controller.js"></script>
+  <script src="app/index.run.js"></script>
+  <script src="app/index.route.js"></script>
+  <script src="app/index.constants.js"></script>
+  <script src="app/index.config.js"></script>
+  <script src="app/index.module.js"></script>
+<script type="text/javascript" src="bower_components/amcharts/dist/amcharts/amcharts.js"></script>
+<script type="text/javascript" src="bower_components/amcharts/dist/amcharts/serial.js"></script>
+<script type="text/javascript" src="bower_components/amcharts-angular/dist/amChartsDirective.js"></script>
 
 </html>
