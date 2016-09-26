@@ -10,8 +10,7 @@
 				'ngMessages',
 				'ngAria',
 				'ui.router',
-				'ngMaterial',
-				'amChartsDirective'
+				'ngMaterial'
       ]
 		);
 })();
