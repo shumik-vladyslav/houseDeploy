@@ -2,7 +2,8 @@
  *  Do not remove the comment below. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
  */
-
+// bower:scss
+// endbower
 
 @font-face {
     font-family: 'Raleway Thin';
@@ -146,6 +147,10 @@ height: 100%;
 h1{
     color: #68859c;
 }
+
+h3{
+    color: #68859c;
+}
 .card{
  
 }
@@ -159,6 +164,7 @@ h1{
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    color: #7b7b7b;
 }
 
 .left-card{
@@ -198,6 +204,21 @@ h1{
     border-bottom-left-radius: 10px;
 }
 
+.line {
+  position: absolute;
+  background-color: #000000;
+}
+
+.chart-wrap{
+    width: 100%;
+    height: 100%;
+}
+
+.day{
+    font-size: 25px;
+    font-weight: 800;
+}
+
 #chartdiv {
   width: 100%;
   height: 500px;
@@ -206,6 +227,152 @@ h1{
 .amcharts-export-menu-top-right {
   top: 10px;
   right: 0;
+}
+
+.toolbar{
+    background:#1d5183; opacity: 0.9;
+    
+}
+
+.toolbar div{
+margin-top: 25px}
+
+.toolbar a{
+    margin: 10px;
+    text-decoration: none;
+    margin-left: 80px;
+        color: white;
+}
+
+.login{
+    width: 100%;
+    height: 100%;
+}
+
+.login md-content{
+    background-color:#ffffff;
+}
+
+.login md-content md-input-container button{
+    width: 200px;
+    height: 100%;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+
+.login md-content md-input-container .md-button {
+  color : #4cae4c;
+   background-color: #e3efe1;
+}
+
+.login md-content md-input-container .md-button:not([disabled]):hover {
+  background-color: #4cae4c;
+   color : #ffffff;
+}
+
+.back button{
+     width: 100px;
+    height: 100%;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.back{
+    position: absolute;
+}
+.back  .md-button {
+  color : #4cae4c;
+   background-color: #e3efe1;
+}
+
+.back  .md-button:not([disabled]):hover {
+  background-color: #4cae4c;
+   color : #ffffff;
+}
+
+.real-wrap{
+    margin:40px;
+}
+
+.real-wrap img{
+    margin-left: 10px;
+}
+
+.flag-wrap{
+    margin:40px;
+}
+
+.flag-wrap img{
+    margin-right:40px;
+  
+}
+
+.recov-div{
+    background: #eaf4e9;
+}
+
+.disc-div{
+    background: white;
+}
+
+.blue{
+    color: #323373;
+    font-weight: bolder;
+}
+.grey{
+     color: #939599;
+}
+.cicle-wrap{
+    width: 30px;
+    height: 30px;
+}
+.cicle{
+    background: #5cb85c;
+    border: none;
+    color: #ffffff;
+    height: 17px;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: -12px;
+    width: 70%;
+    height: 70%;
+}
+
+.disc-div .text{
+    width: 25%;
+    margin: 10px;
+    text-align: -webkit-center;
+    color: #939599;
+}
+
+.recov-div .text{
+    color: #323373;
+    font-weight: bolder;
+    width: 260px;
+    text-align: -webkit-center;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.list-item{
+    width: 300px;
+    margin: 10px;
+}
+
+.label-head{
+    margin: 10px;
+}
+
+
+.head{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d9edcb+0,ffffff+41,ffffff+60,cadff1+100 */
+background: #d9edcb; /* Old browsers */
+background: -moz-linear-gradient(left,  #d9edcb 0%, #ffffff 41%, #ffffff 60%, #cadff1 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #d9edcb 0%,#ffffff 41%,#ffffff 60%,#cadff1 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #d9edcb 0%,#ffffff 41%,#ffffff 60%,#cadff1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9edcb', endColorstr='#cadff1',GradientType=1 ); /* IE6-9 */
+
 }
 
 .background-card-0{
@@ -260,6 +427,71 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88a650', end
   background-color: transparent;
 }
 
+md-dialog{
+    width: 500px;
+    height: 400px;
+}
+
+.temp-dialog{
+    color: white;
+    width: 100%;
+    height: 100%;
+    background: #c46a56;
+}
+
+.temp-dialog div div h4{
+    color: white;
+}
+
+.temp-dialog div div md-divider{
+     margin: 10px
+}
+
+.temp-dialog div .temp-head .big-value{
+    font-size: 48px;
+    margin: 10px
+}
+
+.temp-dialog md-content {
+    background: #c46a56;
+}
+
+.temp-dialog div .temp-head div{
+    font-size: 8px;
+}
+
+.temp-dialog div div md-input-container button{
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: none;
+    width: 80%;
+    height: 70%;
+}
+
+ #red-slider .md-track{
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+#red-slider .md-thumb:after{
+     background-color: #c46a56 !important;
+    border-color: #ffffff !important;
+        width: 50px;
+    height: 50px;
+        border-radius: 30px;
+}
+md-slider[md-vertical] .md-thumb-container .md-thumb:after {
+    left: -14px;
+}
+#red-slider .md-focus-thumb, #red-slider .md-focus-ring{
+    background-color: #ffffff;
+}
+.temp-dialog md-content div md-slider-container{
+    height: 100%;
+}
+.temp-dialog md-content div md-slider-container md-slider .md-slider-wrapper{
+    height: 250px;
+}
+
 .background-card-2{
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d4d2d0+1,d3d3d3+51,d3d3d3+100 */
 background: #d4d2d0; /* Old browsers */
@@ -306,6 +538,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c54e3e', end
     width: 80%;
     margin-left: 10%
    }
+
+
+   
+
+   .md-button.md-fab.edit {
+  color : #62a153;
+   background-color: #62a153;
+}
+
+.md-button.md-fab.edit:not([disabled]):hover {
+  background-color: #538e46;
+}
+
+.md-button.md-fab.edit[disabled] {
+  color : #62a153;
+  background-color: transparent;
+}
   @media  screen and (min-device-width: 300px) and (min-width: 300px){
     .card md-card{
         font-size: 7px;
@@ -350,8 +599,156 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c54e3e', end
     .md-button.md-icon-button md-icon, button.md-button.md-fab md-icon {
         display: table-row;
     }
+
+    .md-button.md-fab.edit {
+        line-height: 40px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .day{
+        font-size: 18px;
+        font-weight: 800;
+    }
+    .line{
+        background: #e6e6e6;
+    }
+
+    .vertical-0 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 29%;
+    }
+
+    .vertical-6 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 42%;
+    }
+
+    .vertical-12 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 55%;
+    }
+
+    .vertical-18 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 67%;
+    }
+
+    .vertical-00 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 82%;
+    }
+
+    .horizontal {
+       width: 53%;
+        height: 1px;
+        left: 29%;
+    }
+
+    .occupancy .label{
+        font-size: 10px;
+        margin: 12px;
+    }
+
+    .bar{
+        width: 4.5px;
+        height: 20px;
+        margin-left: 2.5px;
+        background: #d2d2d2;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .fill{
+        background: #7e7e7e;
+        width: 100%;
+    }
+
+    .hours-wrap{
+        width: 83%;
+    }
+
+    .hour{
+        font-size: 10px;
+        margin-left: 13px;
+    }
+
+    .switch{
+        width: 30%;
+    }
+    
+    .flag-wrap img{
+            height: 10%;
+    }
+
+    .real-wrap span{
+        font-size: 10px;
+    }
+     .flag-wrap span{
+        font-size: 10px;
+    }
+    .flag-wrap img {
+        margin-right: 10px;
+    }
+
+    .back button{
+        width: 70px;
+        height: 40px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+    }
+
+    .back button span{
+        font-size: 10px;
+    }
+
+   .disc-div .text {
+        width: 75%;
+        margin: 10px;
+        text-align: -webkit-center;
+        color: #939599;
+    }
+
+    .list-item{
+        width: 240px;
+        margin: 10px;
+    }
+    .grey{
+        font-size: 12px;
+    }
+
  }
- 
+ @media  screen and (min-device-width: 325px) and (min-width: 325px){
+  .bar{
+        margin-left: 2.9px;
+    }
+ }
+
+  @media  screen and (min-device-width: 335px) and (min-width: 335px){
+  .bar{
+        margin-left: 3.2px;
+    }
+ }
+   @media  screen and (min-device-width: 345px) and (min-width: 345px){
+  .bar{
+      width: 5px;
+        margin-left: 3.4px;
+    }
+ }
+
+   @media  screen and (min-device-width: 350px) and (min-width: 350px){
+  .bar{
+      width: 5px;
+        margin-left: 3.7px;
+    }
+ }
 @media  screen and (min-device-width: 375px) and (min-width: 375px){
    .card md-card{
         font-size: 8px;
@@ -364,9 +761,508 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c54e3e', end
      .big-degree{
         font-size: 50px;
     }
+
+
+    .vertical-0 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 28%;
+    }
+
+    .vertical-6 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 42%;
+    }
+
+    .vertical-12 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 56%;
+    }
+
+    .vertical-18 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 69%;
+    }
+
+    .vertical-00 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 84%;
+    }
+
+    .horizontal {
+       width: 56%;
+        height: 1px;
+        left: 28%;
+    }
+
+    .occupancy .label {
+        font-size: 10px;
+        margin: 18px;
+    }
+    .bar {
+        width: 5px;
+        margin-left: 3.8px;
+    }
 }
 
+   @media  screen and (min-device-width: 383px) and (min-width: 383px){
+  .bar{
+      width: 5.4px;
+        margin-left: 4px;
+    }
+ }
+
+@media  screen and (min-device-width: 393px) and (min-width: 393px){
+  .bar{
+      width: 5.6px;
+        margin-left: 4px;
+    }
+ }
+
+@media  screen and (min-device-width: 410px) and (min-width: 410px){
+
+    .vertical-0 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 27%;
+    }
+
+    .vertical-6 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 41%;
+    }
+
+    .vertical-12 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 55%;
+    }
+
+    .vertical-18 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 69%;
+    }
+
+    .vertical-00 { 
+        width: 1px;
+        height: 10px;
+        LEFT: 84%;
+    }
+
+    .horizontal {
+       width: 57%;
+        height: 1px;
+        left: 27%;
+    }
+
+    .occupancy .label {
+        font-size: 12px;
+        margin: 16px;
+    }
+    .bar {
+        width: 6px;
+        margin-left: 4px;
+    }
+}
+@media  screen and (min-device-width: 425px) and (min-width: 425px){
+  .bar{
+      width: 6.6px;
+        margin-left: 4px;
+    }
+
+    .vertical-0 { 
+        LEFT: 27%;
+    }
+
+    .vertical-6 { 
+        LEFT: 42%;
+    }
+
+    .vertical-12 { 
+        LEFT: 56%;
+    }
+
+    .vertical-18 { 
+        LEFT: 70%;
+    }
+
+    .vertical-00 { 
+        LEFT: 85%;
+    }
+
+    .horizontal {
+       width: 58%;
+        left: 27%;
+    }
+ }
+ @media  screen and (min-device-width: 425px) and (min-width: 425px){
+  .bar{
+      width: 7px;
+        margin-left: 4px;
+    }
+ }
+
+  @media  screen and (min-device-width: 445px) and (min-width: 445px){
+  .bar{
+      width: 7.2px;
+        margin-left: 4px;
+    }
+     .occupancy .label {
+        font-size: 13px;
+        margin: 18px;
+    }
+    .hours-wrap {
+    width: 88%;
+}
+
+    .vertical-0 { 
+        LEFT: 27%;
+    }
+
+    .vertical-6 { 
+        LEFT: 42%;
+    }
+
+    .vertical-12 { 
+        LEFT: 57%;
+    }
+
+    .vertical-18 { 
+        LEFT: 71%;
+    }
+
+    .vertical-00 { 
+        LEFT: 86%;
+    }
+
+    .horizontal {
+       width: 59%;
+        left: 27%;
+    }
+ }
+
+ @media  screen and (min-device-width: 465px) and (min-width: 465px){
+  .bar{
+      width: 8px;
+        margin-left: 4px;
+    }
+ }
+
+  @media  screen and (min-device-width: 485px) and (min-width: 485px){
+  .bar{
+      width: 8.5px;
+        margin-left: 4px;
+    }
+ }
+
+  @media  screen and (min-device-width: 496px) and (min-width: 496px){
+  .bar{
+      width: 9px;
+        margin-left: 4px;
+    }
+ }
+
+   @media  screen and (min-device-width: 510px) and (min-width: 510px){
+   .occupancy .label {
+        font-size: 14px;
+        margin: 22px;
+    }
+  .bar{
+      width: 9px;
+        margin-left: 4px;
+    }
+    .vertical-18 { 
+        LEFT: 72%;
+    }
+
+    .vertical-00 { 
+        LEFT: 87%;
+    }
+
+    .horizontal {
+       width: 60%;
+        left: 27%;
+    }
+ }
+  @media  screen and (min-device-width: 525px) and (min-width: 525px){
+   .bar{
+      width: 9.5px;
+        margin-left: 4px;
+    }
+  }
+
+@media  screen and (min-device-width: 540px) and (min-width: 540px){
+   .bar{
+      width: 10px;
+        margin-left: 4px;
+    }
+  }
+
+  
+@media  screen and (min-device-width: 550px) and (min-width: 550px){
+   .bar{
+      width: 10.5px;
+        margin-left: 4px;
+    }
+  }
+  @media  screen and (min-device-width: 565px) and (min-width: 565px){
+   .bar{
+      width: 11px;
+        margin-left: 4px;
+    }
+      .vertical-18 { 
+        LEFT: 73%;
+    }
+
+    .vertical-00 { 
+        LEFT: 88%;
+    }
+
+    .horizontal {
+       width: 61%;
+        left: 27%;
+    }
+  }
+@media  screen and (min-device-width: 510px) and (min-width: 510px){
+   .occupancy .label {
+        font-size: 14px;
+        margin: 22px;
+    }
+  .bar{
+      width: 9px;
+        margin-left: 4px;
+    }
+    .vertical-18 { 
+        LEFT: 72%;
+    }
+
+    .vertical-00 { 
+        LEFT: 87%;
+    }
+
+    .horizontal {
+       width: 60%;
+        left: 27%;
+    }
+ }
+ @media  screen and (min-device-width: 525px) and (min-width: 525px){
+   .bar{
+      width: 10px;
+        margin-left: 4px;
+    }
+  }
+
+  @media  screen and (min-device-width: 540px) and (min-width: 540px){
+   .bar{
+      width: 10.5px;
+        margin-left: 4px;
+    }
+    .occupancy .label {
+        margin: 24px;
+    }
+    .vertical-18 { 
+        LEFT: 73%;
+    }
+
+    .vertical-00 { 
+        LEFT: 88%;
+    }
+
+    .horizontal {
+       width: 61%;
+        left: 27%;
+    }
+  }
+  
+  @media  screen and (min-device-width: 555px) and (min-width: 555px){
+   .bar{
+      width: 11px;
+        margin-left: 4px;
+    }
+  }
+  
+  @media  screen and (min-device-width: 570px) and (min-width: 570px){
+   .bar{
+      width: 11.5px;
+        margin-left: 4px;
+    }
+      .occupancy .label {
+        margin: 25px;
+    }
+    .vertical-18 { 
+        LEFT: 73%;
+    }
+
+    .vertical-00 { 
+        LEFT: 89%;
+    }
+
+    .horizontal {
+       width: 62%;
+        left: 27%;
+    }
+  }
+  
+  @media  screen and (min-device-width: 585px) and (min-width: 585px){
+   .bar{
+      width: 12px;
+        margin-left: 4px;
+    }
+  }
+  
+  @media  screen and (min-device-width: 600px) and (min-width: 600px){
+    .occupancy .label {
+        margin: 15px;
+    }
+   .bar{
+      width: 12.5px;
+        margin-left: 4px;
+    }
+    .hours-wrap {
+    width: 91%;
+}
+
+    .vertical-0 { 
+        LEFT: 25%;
+    }
+
+    .vertical-6 { 
+        LEFT: 41%;
+    }
+
+    .vertical-12 { 
+        LEFT: 58%;
+    }
+
+    .vertical-18 { 
+        LEFT: 73%;
+    }
+
+    .vertical-00 { 
+        LEFT: 90%;
+    }
+
+    .horizontal {
+       width: 65%;
+        left: 25%;
+    }
+
+    
+.disc-div .text{
+    width: 45%;
+   
+}
+
+    .temp-dialog div .temp-head div{
+        font-size: 12px;
+    }
+
+    .temp-dialog div .temp-head .big-value{
+        font-size: 68px;
+        margin: 10px
+    }
+
+    .temp-dialog div div h4{
+        color: white;
+        font-size: 22px;
+    }
+
+  }
+  @media  screen and (min-device-width: 615px) and (min-width: 615px){
+   .bar{
+      width: 13px;
+        margin-left: 4px;
+    }
+      .occupancy .label {
+        margin: 15px;
+    }
+  }
+  
+  @media  screen and (min-device-width: 630px) and (min-width: 630px){
+   .bar{
+      width: 13.5px;
+        margin-left: 4px;
+    }
+  }
+  @media  screen and (min-device-width: 645px) and (min-width: 645px){
+   .bar{
+      width: 14px;
+        margin-left: 4px;
+    }
+  }
+  
+  @media  screen and (min-device-width: 660px) and (min-width: 660px){
+   .bar{
+      width: 14.5px;
+        margin-left: 4px;
+    }
+      .occupancy .label {
+        margin: 17px;
+    }
+  }
+  @media  screen and (min-device-width: 675px) and (min-width: 675px){
+   .bar{
+      width: 15px;
+        margin-left: 4px;
+    }
+  }
+  
+  @media  screen and (min-device-width: 690px) and (min-width: 690px){
+   .bar{
+      width: 15.5px;
+        margin-left: 4px;
+    }
+     .vertical-18 { 
+        LEFT: 74%;
+    }
+
+    .vertical-00 { 
+        LEFT: 91%;
+    }
+    .horizontal {
+       width: 66%;
+        left: 25%;
+    }
+  }
+
+   @media  screen and (min-device-width: 705px) and (min-width: 705px){
+   .bar{
+        margin-left: 4.2px;
+    }
+      .occupancy .label {
+        margin: 22px;
+    }
+  }
+  
+  @media  screen and (min-device-width: 720px) and (min-width: 720px){
+   .bar{
+        margin-left: 4.4px;
+    }
+  }
+     @media  screen and (min-device-width: 735px) and (min-width: 735px){
+   .bar{
+        margin-left: 4.8px;
+    }
+      .occupancy .label {
+        margin: 25px;
+    }
+  }
+  
+  @media  screen and (min-device-width: 750px) and (min-width: 750px){
+   .bar{
+        margin-left: 5.5px;
+    }
+  }
 @media  screen and (min-device-width: 768px) and (min-width: 768px){
+    .bar{
+        margin-left: 6px;
+    }
    .card md-card{
         font-size: 13px;
         height: 110px;
@@ -387,6 +1283,76 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c54e3e', end
     }
 }
 
+@media  screen and (min-device-width: 790px) and (min-width: 790px){
+   .bar{
+        margin-left: 6.5px;
+    }
+      .occupancy .label {
+        margin: 27px;
+    }
+  }
+
+@media  screen and (min-device-width: 810px) and (min-width: 810px){
+    .bar-wraper{
+        width: 72%;
+    }
+   .bar{
+        margin-left: 7px;
+    }
+      .occupancy .label {
+        margin: 30px;
+    }
+      .vertical-18 { 
+        LEFT: 75%;
+    }
+
+    .vertical-00 { 
+        LEFT: 92%;
+    }
+    .horizontal {
+       width: 67%;
+        left: 25%;
+    }
+    .list-item{
+    width: 300px;
+    margin: 10px;
+}
+
+.grey{
+    font-size: 15px;
+}
+  }
+  @media  screen and (min-device-width: 850px) and (min-width: 850px){
+       .occupancy .label {
+        margin: 32px;
+    }
+   .bar{
+        margin-left: 7px;
+    }
+   
+  }
+
+   @media  screen and (min-device-width: 900px) and (min-width: 900px){
+       .occupancy .label {
+        margin: 40px;
+    }
+   .bar{
+        margin-left: 8px;
+    }
+
+    .hours-wrap {
+    width: 93%;
+}
+.md-button.md-fab.edit {
+    line-height: 40px;
+    width: 45px;
+    height: 45px;
+}
+   .switch {
+    width: 20%;
+}
+  }
+
   @media  screen and (min-device-width: 960px) and (min-width: 960px){
     .card md-card{
         margin-left: 50px;
@@ -399,9 +1365,113 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c54e3e', end
         margin-left: 50px;
         margin-right: 50px;
     }
+    
+      .occupancy .label {
+        margin: 12px;
+    }
+
+
+    .vertical-6 { 
+        LEFT: 42%;
+    }
+
+    .vertical-12 { 
+        LEFT: 57%;
+    }
+
+    .vertical-18 { 
+        LEFT: 73%;
+    }
+
+    .vertical-00 { 
+        LEFT: 89%;
+    }
+
+    .horizontal {
+       width: 64%;
+        left: 25%;
+    }
+ }
+ @media  screen and (min-device-width: 960px) and (min-width: 960px){
+ 
+  .occupancy .label {
+        margin: 15px;
+    }
+     .bar{
+         width: 17px;
+        margin-left: 10px;
+    }
+    .bar-wraper {
+    width: 74%;
+}
+
+.disc-div .text{
+    width: 35%;
+   
+}
+ }
+
+ @media  screen and (min-device-width: 1050px) and (min-width: 1050px){
+ .bar-wraper{
+     width: 74%
+ }
+ .occupancy .label {
+        margin: 20px;
+    }
+ }
+  @media  screen and (min-device-width: 1150px) and (min-width: 1150px){
+      .occupancy .label {
+        margin: 25px;
+    }
+ .bar-wraper{
+     width: 74%
+ }
+
+    .vertical-6 { 
+        LEFT: 42%;
+    }
+
+    .vertical-12 { 
+        LEFT: 58%;
+    }
+
+    .vertical-18 { 
+        LEFT: 74%;
+    }
+
+    .vertical-00 { 
+        LEFT: 90%;
+    }
+
+    .horizontal {
+       width: 65%;
+        left: 25%;
+    }
+ }
+
+   @media  screen and (min-device-width: 1250px) and (min-width: 1250px){
+      .occupancy .label {
+        margin: 30px;
+    }
+ .bar-wraper{
+     width: 74%
+ }
+.switch {
+    width: 15%;
+}
  }
 
   @media  screen and (min-device-width: 1280px) and (min-width: 1280px){
+         .occupancy .label {
+        margin: 15px;
+    }
+ .bar-wraper{
+     width: 68%
+ }
+  .bar{
+         width: 15px;
+        margin-left: 5px;
+    }
      .card md-card{
         width: 100%;
         height: 150px;
@@ -440,4 +1510,136 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c54e3e', end
     .md-button.md-icon-button md-icon, button.md-button.md-fab md-icon {
         display: table-row;
     }
+
+
+    .vertical-0 { 
+        LEFT: 14%;
+    }
+    .vertical-6 { 
+        LEFT: 21%;
+    }
+
+    .vertical-12 { 
+        LEFT: 29%;
+    }
+
+    .vertical-18 { 
+        LEFT: 36%;
+    }
+
+    .vertical-00 { 
+        LEFT: 43%;
+    }
+
+    .horizontal {
+       width: 29%;
+        left: 14%;
+    }
+
+    .vertical-0-md { 
+        width: 1px;
+        height: 10px;
+        LEFT: 64%;
+    }
+
+    .vertical-6-md { 
+        width: 1px;
+        height: 10px;
+        LEFT: 71%;
+    }
+
+    .vertical-12-md { 
+        width: 1px;
+        height: 10px;
+        LEFT: 79%;
+    }
+
+    .vertical-18-md { 
+        width: 1px;
+        height: 10px;
+        LEFT: 86%;
+    }
+
+    .vertical-00-md { 
+        width: 1px;
+        height: 10px;
+        LEFT: 93%;
+    }
+
+    .horizontal-md {
+       width: 29%;
+        height: 1px;
+        left: 64%;
+    }
+    .hours-wrap {
+    width: 91%;
+}
+.disc-div .text{
+    width: 25%;
+   
+}
  }
+
+   @media  screen and (min-device-width: 1380px) and (min-width: 1380px){
+         .occupancy .label {
+        margin: 20px;
+    }
+ .bar-wraper{
+     width: 69%
+ }
+  .bar{
+         width: 15px;
+        margin-left: 5px;
+    }
+   }
+
+     @media  screen and (min-device-width: 1480px) and (min-width: 1480px){
+         .occupancy .label {
+        margin: 25px;
+    }
+ .bar-wraper{
+     width: 69%
+ }
+  .bar{
+         width: 15px;
+        margin-left: 5px;
+    }
+   }
+
+     @media  screen and (min-device-width: 1580px) and (min-width: 1580px){
+         .occupancy .label {
+        margin: 28px;
+    }
+ .bar-wraper{
+     width: 69%
+ }
+  .bar{
+         width: 15px;
+        margin-left: 7px;
+    }
+   }
+     @media  screen and (min-device-width: 1680px) and (min-width: 1680px){
+         .occupancy .label {
+        margin: 28px;
+    }
+ .bar-wraper{
+     width: 70%
+ }
+  .bar{
+         width: 15px;
+        margin-left: 9px;
+    }
+   }
+
+     @media  screen and (min-device-width: 1750px) and (min-width: 1750px){
+         .occupancy .label {
+        margin: 28px;
+    }
+ .bar-wraper{
+     width: 72%
+ }
+  .bar{
+         width: 15px;
+        margin-left: 9px;
+    }
+   }
