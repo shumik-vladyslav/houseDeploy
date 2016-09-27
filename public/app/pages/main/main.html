@@ -1,4 +1,47 @@
-<div>
+<div  ng-controller="AppCtrl" layout="column" ng-cloak style="background:#f2f3f5">
+
+    <section layout="row" flex>
+
+        <md-sidenav class="md-sidenav-left" style="background:#1d5183; opacity: 0.9;" md-component-id="left" md-disable-backdrop
+            md-whiteframe="4">
+
+            <md-toolbar class="toolbar" style="background: #1d5183;" layout="column" layout-align="start start">
+                <div>
+                    <md-icon md-svg-src="assets/icons/list.svg" class="white"></md-icon>
+                    <a style="margin-left: 50px;font-weight: bold;" href="/">DESHBORD</a>
+                </div>
+                <a ui-sref="schedule">SCHADULE</a>
+                <a>BATTERY</a>
+                <a>SOLAR</a>
+                <a>MOTIONS SENDSORS</a>
+                <a>OCCUPANCY</a>
+            </md-toolbar>
+
+            <md-content layout-margin style="background:#1d5183; opacity: 0.9;">
+                <md-button ng-click="toggleLeft()" class="md-accent">
+                    <md-icon md-svg-src="assets/icons/close.svg" class="white"></md-icon>
+                </md-button>
+            </md-content>
+
+        </md-sidenav>
+
+        <md-content flex layout-padding style="background: aliceblue;">
+
+            <div layout="row" layout-align="start center">
+                <md-button ng-click="toggleLeft()" class="md-icon-button">
+                    <md-icon md-svg-src="assets/icons/list.svg" class="white"></md-icon>
+                </md-button>
+                <h3>DESHBORD</h3>
+            </div>
+
+
+        </md-content>
+
+    </section>
+
+</div>
+  <md-divider></md-divider>
+<div class="wrap">
     <section layout="column" layout="space-around center" layout-gt-md="row" layout-wrap layout-align-gt-md="space-around start">
         <div class="card" flex-gt-md="45" ng-repeat="item in main.data">
             <div layout="row">
@@ -32,18 +75,17 @@
                             DESIRED TEMPERATURE
                         </span>
                         <div class="big-degree">
-                            {{item.temperature.comfort_status}}&deg;C
-                            {{main.getDesired(item)}}
+                            {{item.temperature.comfort_status}}&deg;C {{main.getDesired(item)}}
                         </div>
                     </div>
                     <div flex="20" layout="column" layout-align="center center">
-                        <md-button ng-disabled="item.comfort_active" class="md-fab md-mini" ng-click="main.swapComfort(item,false)">
+                        <md-button ng-disabled="item.comfort_active" class="md-fab md-mini" ng-click="main.swapComfort(item,true)">
                             <md-icon md-svg-src="assets/icons/add.svg" class="white"></md-icon>
                         </md-button>
                         <md-button ng-disabled="!item.comfort_active" class="md-fab md-mini" ng-click="main.swapComfort(item,false)">
                             <md-icon md-svg-src="assets/icons/archive.svg" class="white"></md-icon>
                         </md-button>
-                        <md-button class="md-fab md-mini">
+                        <md-button class="md-fab md-mini" ng-click="main.edit(item)">
                             <md-icon md-svg-src="assets/icons/edit.svg" class="white"></md-icon>
                         </md-button>
                     </div>

@@ -8,7 +8,7 @@
   /** @ngInject */
   function HistoryController($rootScope, $http, $state, DialogService) {
     var vm = this;
-    console.log($state.params.applianceId)
+    console.log($state.params.applianceId,AmCharts)
     getData();
 
     function getData() {
