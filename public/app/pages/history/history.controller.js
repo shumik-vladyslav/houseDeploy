@@ -37,7 +37,7 @@
             if (object.hasOwnProperty(key)) {
               var element = object[key];
               //if (element.appliance_id === $state.params.applianceId) {
-                var tem = element.comfort_status[0].$$hashKey = "sd"
+                let tem = element.comfort_status[0].$$hashKey = "sd"
                 element.comfort_status.push(tem)
                 vm.data = element.comfort_status;
 

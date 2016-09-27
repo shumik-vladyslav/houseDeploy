@@ -1,0 +1,43 @@
+<div class="back">
+    <md-button class="md-raised">< back</md-button>
+</div>
+<div class="login">
+    <div class="head" layout="column" layout-align="center center">
+        <img src="assets/logo.png">
+        <img class="switch" src="assets/switch.png">
+    </div>
+    <div class="recov-div" layout="column" layout-align="center center">
+        <div class="text">
+            To recovery your passwrod, enter your registered email address below.
+        </div>
+    </div>
+    <div class="disc-div" layout="column" layout-align="center center">
+        <div class="text">
+            This is the email you used to register your Real Value heating system for the first time. You will receive an email with more instructions.
+        </div>
+    </div>
+    <md-content layout="column" layout-align="center center">
+        <md-input-container>
+            <!--<md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>-->
+            <label>Email</label>
+            <input ng-model="user.email" type="email" ng-required="true">
+        </md-input-container>
+        <md-input-container layout="column" layout-align="center center">
+            <md-button class="md-raised">&#8594; Continue</md-button>
+        </md-input-container>
+    </md-content>
+    <md-divider></md-divider>
+
+    <div layout="column" layout-align="space-between center">
+        <div flex layout="row" class="real-wrap">
+            <span>In association with: </span>
+            <img src="assets/real.png">
+        </div>
+        <md-divider></md-divider>
+        <div flex="40" layout="row" class="flag-wrap" layout-align-xs="start center">
+            <div hide-xs flex="30"></div>
+            <img src="assets/flag.png">
+            <span flex="30" flex-xs="50">This projet has received functiong from the European Union`s Horizon 2020 research and innovation programme under grant agreement No 646116</span>
+        </div>
+    </div>
+</div>

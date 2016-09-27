@@ -1,0 +1,28 @@
+<div class="temp-dialog" ng-cloak layout="row" layout-align="center stretch">
+    <div layout="column" layout-align="center center">
+        <div class="temp-head" layout="column" layout-align="center center">
+            <h4>LIVING ROOM</h4>
+            <div>DESIRED TEMPERATURE</div>
+            <div class="big-value" flex="25">{{value}}&deg;C </div>
+            <md-divider></md-divider>
+            <div>CURRENT TEMPERATURE 18&deg;C</div>
+        </div>
+        <div flex="20"></div>
+        <div layout="row">
+            <md-input-container layout="column" layout-align="center center">
+                <md-button ng-click="answer()">OK</md-button>
+            </md-input-container>
+            <md-input-container ng-click="cancel()" layout="column" layout-align="center center">
+                <md-button>CANCEL</md-button>
+            </md-input-container>
+        </div>
+    </div>
+    <md-content layout-padding layout="column" layout-align="center center">
+        <div flex layout="column" layout-align="center stretch">
+            <div flex="15"></div>
+            <md-slider-container ng-disabled="readonly">
+                   <md-slider flex="" min="15" max="30" ng-model="value" aria-label="red" id="red-slider"  md-vertical>
+            </md-slider-container>
+        </div>
+    </md-content>
+</div>

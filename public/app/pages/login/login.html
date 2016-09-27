@@ -1,0 +1,36 @@
+<div class="login">
+    <div class="head" layout="column" layout-align="center center">
+        <img src="assets/logo.png">
+        <img class="switch" src="assets/switch.png">
+    </div>
+    <md-content layout="column" layout-align="center center">
+        <md-input-container>
+            <!--<md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>-->
+            <label>Email</label>
+            <input ng-model="email" type="email" ng-required="true">
+        </md-input-container>
+        <md-input-container>
+            <label>Password</label>
+            <input ng-model="password" type="password" ng-required="true">
+        </md-input-container>
+        <md-input-container layout="column" layout-align="center center">
+            <md-button class="md-raised" ng-click="login.login(email, password)">&#8594; Login</md-button>
+            <md-button class="md-raised">Button</md-button>
+            <md-button class="md-raised">Button</md-button>
+        </md-input-container>
+    </md-content>
+    <md-divider></md-divider>
+
+    <div layout="column" layout-align="space-between center">
+        <div flex layout="row" class="real-wrap">
+            <span>In association with: </span>
+            <img src="assets/real.png">
+        </div>
+        <md-divider></md-divider>
+        <div flex="40" layout="row" class="flag-wrap" layout-align-xs="start center">
+            <div hide-xs flex="30"></div>
+            <img src="assets/flag.png">
+            <span flex="30" flex-xs="50">This projet has received functiong from the European Union`s Horizon 2020 research and innovation programme under grant agreement No 646116</span>
+        </div>
+    </div>
+</div>
