@@ -26,6 +26,18 @@
         controller: 'HistoryController',
         controllerAs: 'history'
       })
+       .state('sched', {
+        url: '/sched',
+        templateUrl: 'app/pages/schedule/schedule.html',
+        controller: 'ScheduleController',
+        controllerAs: 'schedule'
+      })
+        .state('edit', {
+        url: '/edit',
+        templateUrl: 'app/pages/scheduledit/scheduledit.html',
+        controller: 'ScheduleEditController',
+        controllerAs: 'scheduledit'
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'app/pages/login/login.html',
