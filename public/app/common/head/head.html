@@ -1,0 +1,55 @@
+<div ng-controller="AppCtrl" layout="column" ng-cloak style="background:#61a359">
+
+    <section layout="row" flex>
+
+        <md-sidenav class="md-sidenav-left" style="background:#61a359; opacity: 0.9;" md-component-id="left" md-disable-backdrop
+            md-whiteframe="4">
+
+            <md-toolbar class="toolbar" style="background: #61a359;" layout="column" layout-align="start start">
+                <div>
+                    <img src="assets/icon/menu-green.png" class="white"></img>
+                    <a style="margin-left: 50px;font-weight: bold;" href="/">DESHBORD</a>
+                </div>
+                <a ui-sref="schedule">SCHADULE - ROOMS</a>
+                <a ui-sref="schedule">SCHADULE - WEEK</a>
+                <a ui-sref="history">HISTORY</a>
+                <a ui-sref="solar">SOLAR</a>
+                <a ui-sref="batteries">BATTERY</a>
+                <a ui-sref="smart">SMART PLUGS</a>
+            </md-toolbar>
+
+            <!--<md-content layout-margin style="background:#1d5183; opacity: 0.9;">
+                <md-button ng-click="toggleLeft()" class="md-accent" aria-label="red">
+                    <md-icon md-svg-src="assets/icons/close.svg" class="white"></md-icon>
+                </md-button>
+            </md-content>-->
+
+        </md-sidenav>
+
+        <md-content flex layout-padding style="background: #ffffff;">
+
+            <div layout="row" layout-align="start center">
+                <md-button ng-click="toggleLeft()" aria-label="red" style="width: 70px;height: 40px;">
+                    <img src="assets/icon/menu.png" class="white"></img>
+                </md-button>
+                <div flex="40"></div>
+                <div  layout="row"  layout-align="center center">
+                    <img src="assets/icon/bitmap-copy-3@2x.png" class="white"></img>
+                    <span style="color: #1c4981;font-weight: bold;font-size: 30px;">SEE</span>
+                </div>
+                 <div flex="40"></div>
+                <img src="assets/icon/h-o-m-e-i-c-o-n.svg" class="white"></img>
+            </div>
+
+
+        </md-content>
+
+
+
+    </section>
+    <md-content flex layout-padding style="background: #1c4981;">
+        <div layout="row" layout-align="start center" style="color: #ffffff">
+            <div>DASHBOARD</div>
+        </div>
+    </md-content>
+</div>

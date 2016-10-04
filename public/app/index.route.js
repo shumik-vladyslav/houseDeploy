@@ -15,19 +15,13 @@
         controllerAs: 'main'
       })
       .state('history', {
-        url: 'schedule/:applianceId',
+        url: '/history/:applianceId',
         templateUrl: 'app/pages/history/history.html',
         controller: 'HistoryController',
         controllerAs: 'history'
       })
-      .state('schedule', {
-        url: '/schedule',
-        templateUrl: 'app/pages/history/history.html',
-        controller: 'HistoryController',
-        controllerAs: 'history'
-      })
-       .state('sched', {
-        url: '/sched',
+       .state('schedule', {
+        url: '/schedule/:applianceId',
         templateUrl: 'app/pages/schedule/schedule.html',
         controller: 'ScheduleController',
         controllerAs: 'schedule'
@@ -37,6 +31,24 @@
         templateUrl: 'app/pages/scheduledit/scheduledit.html',
         controller: 'ScheduleEditController',
         controllerAs: 'scheduledit'
+      })
+        .state('solar', {
+        url: '/solar',
+        templateUrl: 'app/pages/solar/solar.html',
+        controller: 'SolarController',
+        controllerAs: 'solar'
+      })
+        .state('batteries', {
+        url: '/batteries',
+        templateUrl: 'app/pages/batteries/batteries.html',
+        controller: 'BatteriesController',
+        controllerAs: 'batteries'
+      })
+        .state('smart', {
+        url: '/smart',
+        templateUrl: 'app/pages/smart/smart.html',
+        controller: 'SmartController',
+        controllerAs: 'smart'
       })
       .state('login', {
         url: '/login',

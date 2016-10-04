@@ -1,49 +1,56 @@
-<div  ng-controller="AppCtrl" layout="column" ng-cloak style="background:#f2f3f5">
-
-    <section layout="row" flex>
-
-        <md-sidenav class="md-sidenav-left" style="background:#1d5183; opacity: 0.9;" md-component-id="left" md-disable-backdrop
-            md-whiteframe="4">
-
-            <md-toolbar class="toolbar" style="background: #1d5183;" layout="column" layout-align="start start">
-                <div>
-                    <md-icon md-svg-src="assets/icons/list.svg" class="white"></md-icon>
-                    <a style="margin-left: 50px;font-weight: bold;" href="/">DESHBORD</a>
-                </div>
-                <a ui-sref="schedule">SCHADULE</a>
-                <a ui-sref="sched">SCHEDULE VIEW</a>
-                <a>BATTERY</a>
-                <a>SOLAR</a>
-                <a>OCCUPANCY</a>
-            </md-toolbar>
-
-            <md-content layout-margin style="background:#1d5183; opacity: 0.9;">
-                <md-button ng-click="toggleLeft()" class="md-accent">
-                    <md-icon md-svg-src="assets/icons/close.svg" class="white"></md-icon>
-                </md-button>
-            </md-content>
-
-        </md-sidenav>
-
-        <md-content flex layout-padding style="background: aliceblue;">
-
-            <div layout="row" layout-align="start center">
-                <md-button ng-click="toggleLeft()" class="md-icon-button">
-                    <md-icon md-svg-src="assets/icons/list.svg" class="white"></md-icon>
-                </md-button>
-                <h3>DESHBORD</h3>
-            </div>
-
-
-        </md-content>
-
-    </section>
-
-</div>
-  <md-divider></md-divider>
+<head-menu></head-menu>
+<md-divider></md-divider>
 <div class="wrap">
-    <section layout="column" layout="space-around center" layout-gt-md="row" layout-wrap layout-align-gt-md="space-around start">
+    <section layout="column" layout="space-around center" layout-gt-md="row" layout-wrap layout-align-gt-md="space-between start">
         <div class="card" flex-gt-md="45" ng-repeat="item in main.data">
+            <md-card class="" layout="row">
+                <div class="left-side" layout="column" flex="50">
+                    <div class="top-side" flex="70" layout="column" ng-class=" item.temperature < 15 ? 'back-blue' : (item.temperature < 18 ? 'back-green' : ( item.temperature < 21 ? 'back-orang' : 'back-red'))">
+                        <div class="head-main">{{item.room_type}}</div>
+                        <div flex="10"></div>
+                        <div layout="row" layout-align="center center">
+                            <div class="big-value-g" flex="60">{{item.temperature}}&deg;C </div>
+                            <div>DESIRED TEMPERATURE</div>
+                        </div>
+                    </div>
+                    <div class="bott-side" flex="30" layout="column" flex="45" ng-class=" item.temperature < 15+2 ? 'back-blue' : (item.temperature < 18+2 ? 'back-green' : ( item.temperature < 21+2 ? 'back-orang' : 'back-red'))">
+                        <div layout="row">
+                            <div ng-if="item.comfort_active" class="big-value" flex="25">ON</div>
+                            <div ng-if="!item.comfort_active" class="big-value" flex="25">OFF</div>
+                            <div>UNTIL 16:30</div>
+                        </div>
+                        <div layout="row">
+                            <div class="big-value" flex="20">{{item.temperature + 2}}&deg;C</div>
+                            <div flex>CURRENT TEMPERATURE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-side" layout="column" layout="space-between center" flex="50">
+                    <div flex="45" layout="row">
+                        <md-button ng-click="main.schedule(item)" aria-label="red" layout="column">
+                            <img src="assets/icon/i-c-o-s-c-h-e-d-u-l-e.svg" class="white"></img>
+                            <span>SCHEDULE</span>
+                        </md-button>
+                        <md-button ng-click="main.edit(item)" aria-label="red" layout="column">
+                            <img src="assets/icon/i-c-o-edit.svg" class="white"></img>
+                            <span>EDIT</span>
+                        </md-button>
+                    </div>
+                    <div flex="45" layout="row">
+                        <md-button ng-click="main.history(item)" aria-label="red" layout="column">
+                            <img src="assets/icon/i-c-o-h-i-s-t-o-r-y-i-c-o-n.svg" class="white"></img>
+                            <span>HISTORY</span>
+                        </md-button>
+                        <md-button ng-click="main.swapComfort(item)" aria-label="red" layout="column">
+                            <img ng-if="!item.comfort_active" src="assets/icon/i-c-o-b-o-o-s-t-i-c-o.svg" class="white"></img>
+                            <img ng-if="item.comfort_active" src="assets/icon/i-c-o-b-o-o-s-t-i-c-o-n-a-c-t-i-v-e.svg" class="white"></img>
+                            <span>BOOTS</span>
+                        </md-button>
+                    </div>
+                </div>
+            </md-card>
+        </div>
+        <!--<div class="card" flex-gt-md="45" ng-repeat="item in main.data">
             <div layout="row">
                 <div flex="15"></div>
                 <h1 flex="45">Name</h1>
@@ -79,18 +86,18 @@
                         </div>
                     </div>
                     <div flex="20" layout="column" layout-align="center center">
-                        <md-button ng-disabled="item.comfort_active" class="md-fab md-mini" ng-click="main.swapComfort(item,false)">
-                            <md-icon md-svg-src="assets/icons/add.svg" class="white"></md-icon>
+                        <md-button ng-disabled="item.comfort_active" class="md-fab md-mini" ng-click="main.swapComfort(item,false)" aria-label="red">
+                            <md-icon md-svg-src="assets/icon/i-c-o-edit.svg" class="white"></md-icon>
                         </md-button>
-                        <md-button ng-disabled="!item.comfort_active" class="md-fab md-mini" ng-click="main.swapComfort(item,false)">
+                        <md-button ng-disabled="!item.comfort_active" class="md-fab md-mini" ng-click="main.swapComfort(item,false)" aria-label="red">
                             <md-icon md-svg-src="assets/icons/archive.svg" class="white"></md-icon>
                         </md-button>
-                        <md-button class="md-fab md-mini" ng-click="main.edit(item)">
+                        <md-button class="md-fab md-mini" ng-click="main.edit(item)"  aria-label="red">
                             <md-icon md-svg-src="assets/icons/edit.svg" class="white"></md-icon>
                         </md-button>
                     </div>
                 </div>
             </md-card>
-        </div>
+        </div>-->
     </section>
 </div>

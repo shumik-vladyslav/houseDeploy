@@ -1,47 +1,6 @@
 <div class="wrap">
-    <div ng-controller="AppCtrl">
+<head-menu></head-menu>
 
-        <section layout="row" flex>
-
-
-            <md-sidenav class="md-sidenav-left" style="background:#1d5183; opacity: 0.9;" md-component-id="left" md-disable-backdrop
-                md-whiteframe="4">
-
-                <md-toolbar class="toolbar" style="background: #1d5183;" layout="column" layout-align="start start">
-                    <div>
-                        <md-icon md-svg-src="assets/icons/list.svg" class="white"></md-icon>
-                        <a style="margin-left: 50px;" href="/">DESHBORD</a>
-                    </div>
-                    <a style="font-weight: bold;" ui-sref="schedule">SCHADULE</a>
-                        <a ui-sref="sched">SCHEDULE VIEW</a>
-                    <a>BATTERY</a>
-                    <a>SOLAR</a>
-                    <a>MOTIONS SENDSORS</a>
-                    <a>OCCUPANCY</a>
-                </md-toolbar>
-
-                <md-content layout-margin style="background:#1d5183; opacity: 0.9;">
-                    <md-button ng-click="toggleLeft()" class="md-accent">
-                        <md-icon md-svg-src="assets/icons/close.svg" class="white"></md-icon>
-                    </md-button>
-                </md-content>
-
-            </md-sidenav>
-
-            <md-content flex layout-padding style="background: aliceblue;">
-
-                <div layout="row" layout-align="start center">
-                    <md-button ng-click="toggleLeft()" class="md-icon-button">
-                        <md-icon md-svg-src="assets/icons/list.svg" class="white"></md-icon>
-                    </md-button>
-                    <h3>SCHADULE</h3>
-                </div>
-
-            </md-content>
-
-        </section>
-
-    </div>
     <md-divider></md-divider>
     <div layout="row" layout-align="space-between start">
         <div flex="50"  layout="row"  layout-align="center center">
@@ -78,7 +37,7 @@
                     </div>
                     <div flex="15"></div>
                     <div flex>
-                        <md-button class="md-fab edit">
+                        <md-button class="md-fab edit"  aria-label="red">
                             <md-icon md-svg-src="assets/icons/edit.svg" class="white"></md-icon>
                         </md-button>
                     </div>

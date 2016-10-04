@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>87668785-2DCF-4DB2-A474-12653837FEAC</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M10,20 C15.5228475,20 20,15.5228475 20,10 C20,4.4771525 15.5228475,0 10,0 C4.4771525,0 0,4.4771525 0,10 C0,15.5228475 4.4771525,20 10,20 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="20" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ICONS-ALL" transform="translate(-143.000000, -107.000000)">
+            <g id="ICO---BOOST-ICO" transform="translate(143.000000, 107.000000)">
+                <use id="Oval" stroke="#84B940" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                <path d="M10,16 C12.0636867,16 13.762362,14.4372003 13.9771013,12.4305254 C13.9922365,12.2890914 14,12.1454523 14,12 C14,9.790861 10,5 10,5 C10,5 6,9.790861 6,12 C6,14.209139 7.790861,16 10,16 Z" id="Oval-2" stroke="#8DB651" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10,16 C11.0318433,16 11.881181,15.1475638 11.9885506,14.0530138 C11.9961183,13.975868 12,13.8975194 12,13.8181818 C12,12.6131969 10,10 10,10 C10,10 8,12.6131969 8,13.8181818 C8,15.0231667 8.8954305,16 10,16 Z" id="Oval-2" fill="#8DB651" fill-rule="evenodd"></path>
+            </g>
+        </g>
+    </g>
+</svg>
