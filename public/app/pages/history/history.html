@@ -1,16 +1,16 @@
 <div class="wrap">
-<head-menu></head-menu>
+    <head-menu></head-menu>
 
     <md-divider></md-divider>
     <div layout="row" layout-align="space-between start">
-        <div flex="50"  layout="row"  layout-align="center center">
-             <div style="margin:10px;
+        <div flex="50" layout="row" layout-align="center center">
+            <div style="margin:10px;
 	border-top: 5px solid transparent;
 	border-left: 10px solid #787c7f;
 	border-bottom: 5px solid transparent;"></div>
             <h3>LIVING ROOM</h3>
         </div>
-        <div flex="50"  layout="row"  layout-align="center center">
+        <div flex="50" layout="row" layout-align="center center">
             <div style="margin:10px;
 	border-top: 5px solid transparent;
 	border-right: 10px solid #787c7f;
@@ -22,68 +22,71 @@
 	border-left: 10px solid #787c7f;
 	border-bottom: 5px solid transparent;"></div>
 
+        </div>
     </div>
-</div>
-<section layout="column" layout="space-around center" layout-gt-md="row" layout-wrap layout-align-gt-md="space-around start">
-    <div class="card-occupancy" flex-gt-md="45" layout="column" layout="center center" layout-wrap ng-repeat="item in history.data">
-        <md-card layout="column">
-            <div flex="80" layout="row">
-                <div flex="5"></div>
-                <div layout="column" flex="15" layout="center center" layout-wrap>
-                    <div flex="10"></div>
-                    <div flex="20">
-                        <div class="day">MON</div>
-                        <div>Sep {{item.day || 1}}</div>
-                    </div>
-                    <div flex="15"></div>
-                    <div flex>
-                        <md-button class="md-fab edit"  aria-label="red">
-                            <md-icon md-svg-src="assets/icons/edit.svg" class="white"></md-icon>
-                        </md-button>
-                    </div>
-                </div>
-                <div flex class="chart-wrap" layout="column">
-                    <div flex="10"></div>
-                    <div flex="5">
-                        <div class="hours-wrap" layout="row" layout-align="space-between center">
-                            <div class="hour">00:00</div>
-                            <div class="hour">06:00</div>
-                            <div class="hour">12:00</div>
-                            <div class="hour">18:00</div>
-                            <div class="hour">00:00</div>
+    <div ng-if="!history.data" layout="row" layout-sm="column" layout-align="center center">
+        <md-progress-circular md-colors="{color:'primary'}" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+    <section ng-if="history.data" layout="column" layout="space-around center" layout-gt-md="row" layout-wrap layout-align-gt-md="space-around start">
+        <div class="card-occupancy" flex-gt-md="45" layout="column" layout="center center" layout-wrap ng-repeat="item in history.data">
+            <md-card layout="column">
+                <div flex="80" layout="row">
+                    <div flex="5"></div>
+                    <div layout="column" flex="15" layout="center center" layout-wrap>
+                        <div flex="10"></div>
+                        <div flex="20">
+                            <div class="day">MON</div>
+                            <div>Sep {{item.day || 1}}</div>
                         </div>
-                        <div class="line vertical-0"></div>
-                        <div class="line vertical-6"></div>
-                        <div class="line vertical-12"></div>
-                        <div class="line vertical-18"></div>
-                        <div class="line vertical-00"></div>
-                        <div class="line horizontal"></div>
-                        <div class="line vertical-0-md" hide-sm hide-xs hide-md></div>
-                        <div class="line vertical-6-md" hide-sm hide-xs hide-md></div>
-                        <div class="line vertical-12-md" hide-sm hide-xs hide-md></div>
-                        <div class="line vertical-18-md" hide-sm hide-xs hide-md></div>
-                        <div class="line vertical-00-md" hide-sm hide-xs hide-md></div>
-                        <div class="line horizontal-md" hide-sm hide-xs hide-md></div>
+                        <div flex="15"></div>
+                        <div flex>
+                            <md-button class="md-fab edit" aria-label="red">
+                                <md-icon md-svg-src="assets/icons/edit.svg" class="white"></md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+                    <div flex class="chart-wrap" layout="column">
+                        <div flex="10"></div>
+                        <div flex="5">
+                            <div class="hours-wrap" layout="row" layout-align="space-between center">
+                                <div class="hour">00:00</div>
+                                <div class="hour">06:00</div>
+                                <div class="hour">12:00</div>
+                                <div class="hour">18:00</div>
+                                <div class="hour">00:00</div>
+                            </div>
+                            <div class="line vertical-0"></div>
+                            <div class="line vertical-6"></div>
+                            <div class="line vertical-12"></div>
+                            <div class="line vertical-18"></div>
+                            <div class="line vertical-00"></div>
+                            <div class="line horizontal"></div>
+                            <div class="line vertical-0-md" hide-sm hide-xs hide-md></div>
+                            <div class="line vertical-6-md" hide-sm hide-xs hide-md></div>
+                            <div class="line vertical-12-md" hide-sm hide-xs hide-md></div>
+                            <div class="line vertical-18-md" hide-sm hide-xs hide-md></div>
+                            <div class="line vertical-00-md" hide-sm hide-xs hide-md></div>
+                            <div class="line horizontal-md" hide-sm hide-xs hide-md></div>
 
-                    </div>
-                    <my-elem chart="{{$index}}" data="history.chartData" flex></my-elem>
-                </div>
-            </div>
-            <div flex="20" class="occupancy" layout="row" layout-align="start center">
-                <div class="label">Occupancy</div>
-                <div flex="5" hide-xs></div>
-                <div flex="5" hide-xs hide-sm hide-gt-md></div>
-                <div layout="row" class="bar-wraper" layout-align="space-between center">
-                    <div flex="5" class="bar" layout="column" layout-align="space-between center" ng-repeat="data in history.chartData">
-                        <div flex="15"></div>
-                        <div flex="15"></div>
-                        <div class="fill" flex="15"></div>
-                        <div class="fill" flex="15"></div>
-                        <div class="fill" flex="15"></div>
+                        </div>
+                        <my-elem chart="{{$index}}" data="history.chartData" flex></my-elem>
                     </div>
                 </div>
-            </div>
-        </md-card>
-    </div>
-</section>
+                <div flex="20" class="occupancy" layout="row" layout-align="start center">
+                    <div class="label">Occupancy</div>
+                    <div flex="5" hide-xs></div>
+                    <div flex="5" hide-xs hide-sm hide-gt-md></div>
+                    <div layout="row" class="bar-wraper" layout-align="space-between center">
+                        <div flex="5" class="bar" layout="column" layout-align="space-between center" ng-repeat="data in history.chartData">
+                            <div flex="15"></div>
+                            <div flex="15"></div>
+                            <div class="fill" flex="15"></div>
+                            <div class="fill" flex="15"></div>
+                            <div class="fill" flex="15"></div>
+                        </div>
+                    </div>
+                </div>
+            </md-card>
+        </div>
+    </section>
 </div>

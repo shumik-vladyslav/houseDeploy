@@ -1,7 +1,10 @@
 <head-menu></head-menu>
 <md-divider></md-divider>
 <div class="wrap">
-    <section layout="column" layout="space-around center" layout-gt-md="row" layout-wrap layout-align-gt-md="space-between start">
+    <div ng-if="!main.data" layout="row" layout-sm="column" layout-align="center center">
+      <md-progress-circular md-colors="{color:'primary'}" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+    <section ng-if="main.data" layout="column" layout="space-around center" layout-gt-md="row" layout-wrap layout-align-gt-md="space-between start">
         <div class="card" flex-gt-md="45" ng-repeat="item in main.data">
             <md-card class="" layout="row">
                 <div class="left-side" layout="column" flex="50">

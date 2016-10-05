@@ -9,7 +9,7 @@
 
       function buildToggler(componentId) {
         return function () {
-          $mdSidenav(componentId).toggle();
+          $mdSidenav(componentId).toggle().clickOutsideToClose(true);
         }
       }
     });

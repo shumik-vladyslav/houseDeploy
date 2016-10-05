@@ -2,12 +2,12 @@
 
     <section layout="row" flex>
 
-        <md-sidenav class="md-sidenav-left" style="background:#61a359; opacity: 0.9;" md-component-id="left" md-disable-backdrop
+        <md-sidenav class="md-sidenav-left" style="background:#61a359; opacity: 0.9;" md-component-id="left"  md-is-locked-open
             md-whiteframe="4">
 
             <md-toolbar class="toolbar" style="background: #61a359;" layout="column" layout-align="start start">
                 <div>
-                    <img src="assets/icon/menu-green.png" class="white"></img>
+                    <img ng-click="toggleLeft()"" src="assets/icon/menu-green.png" class="white"></img>
                     <a style="margin-left: 50px;font-weight: bold;" href="/">DESHBORD</a>
                 </div>
                 <a ui-sref="schedule">SCHADULE - ROOMS</a>

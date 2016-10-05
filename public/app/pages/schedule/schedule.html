@@ -1,6 +1,9 @@
 <div class="wrap">
     <head-menu></head-menu>
-    <div class="schedul-wrap wrap" layout="row" layout-align="space-around stretch" layout-align-xs="space-between stretch" layout-align-sm="space-between stretch">
+    <div ng-if="!schedule.show" layout="row" layout-sm="column" layout-align="center center">
+        <md-progress-circular md-colors="{color:'primary'}" md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+    <div ng-if="schedule.show" class="schedul-wrap wrap" layout="row" layout-align="space-around stretch" layout-align-xs="space-between stretch" layout-align-sm="space-between stretch">
         <div flex="15" flex-sm="25" flex-xs="45" class="schedul" ng-repeat="item in schedule.hours">
             <div class="head-schedul" style="color: #ffffff" layout="column" layout-align="center stretch">
                 <div class="day-schedul" style="background-color: #1c4981">
